@@ -1,0 +1,6 @@
+[
+    {"id":1,"title":"Home","iconUnselect":"1.16","iconSelect":"4.2"},
+    {"id":2,"title":"Feed","iconUnselect":"1.11","iconSelect":"4.3"},
+    {"id":3,"title":"Offers","iconUnselect":"1.12","iconSelect":"4.4"},
+    {"id":4,"title":"Loyalty Hub","iconUnselect":"1.13","iconSelect":"4.5"}
+]

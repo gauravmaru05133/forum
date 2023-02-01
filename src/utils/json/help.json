@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "FAQ",
+        "iconId":3.6
+    },
+    {
+        "id": 2,
+        "title": "View Tutorials",
+        "iconId":3.14
+    },
+    {
+        "id": 3,
+        "title": "Support",
+        "iconId":5.1
+    },
+    {
+        "id": 4,
+        "title": "Privacy Policy",
+        "iconId":6.5
+    },
+    {
+        "id": 5,
+        "title": "Loyalty Terms & Conditions",
+        "iconId":6.6
+    },
+    {
+        "id": 6,
+        "title": "About",
+        "iconId":3.5
+    },
+    {
+        "id": 7,
+        "title": "Delete Account",
+        "iconId":6.1
+    }
+]

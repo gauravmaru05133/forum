@@ -1,0 +1,213 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Montserrat-Black.ttf",
+      "sha1": "fca130f21601346cce37bb8a9526ff01af66d912"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Bold.ttf",
+      "sha1": "04052dc3b846609216de1e0cbcec337c6b6e74f6"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-BoldItalic.ttf",
+      "sha1": "ed5e533b6571e33adb6d01298cb8d1a5a2466657"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-ExtraBold.ttf",
+      "sha1": "1914bc1981e6ceceadb2f6d72455b4e89e04965c"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-ExtraLight.ttf",
+      "sha1": "7c594b126941460bd2f3b47097fd6222f52277e7"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Italic.ttf",
+      "sha1": "4ee8f07c7414009645d03d87cd72df15658fe9f4"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Light.ttf",
+      "sha1": "6f21894a80049259ef71fcba135218695b41b67a"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-LightItalic.ttf",
+      "sha1": "8e980f76a35675acd586f829dd2ae8d002dd97d6"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Medium.ttf",
+      "sha1": "6b57d12e018c64352e202f8ef3bf7f431f76d935"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-MediumItalic.ttf",
+      "sha1": "8b2c464e42f07fc307fddb9c58d202ecff19be2a"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Regular.ttf",
+      "sha1": "de57aa03e4821fdbe6c34ec2c895e8b5c914e837"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-SemiBold.ttf",
+      "sha1": "8580dec824bbdb6ce24d04d3aaf360776339f0a7"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-SemiBoldItalic.ttf",
+      "sha1": "51626902f9f2b0aa24b235bb68b2640622f156b9"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Thin.ttf",
+      "sha1": "8c871991960f520a31635f95be6c346b659e2c8c"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-ThinItalic.ttf",
+      "sha1": "f7d887fc6b50157081fd60082d20339c433f9955"
+    },
+    {
+      "path": "src/assets/fonts/index.js",
+      "sha1": "d19450aad28b4be10fef9fc3de64c5eb7b67c4f8"
+    },
+    {
+      "path": "src/assets/images/app_icon.png",
+      "sha1": "fde9c2eadba9c76456ee17662f4af71306e581d6"
+    },
+    {
+      "path": "src/assets/images/app_logo_large.png",
+      "sha1": "97e680e50661fd5b0dd1985a7257c8356335c1c4"
+    },
+    {
+      "path": "src/assets/images/bg.png",
+      "sha1": "6591990f045f0b3ee3ae4d604583bbf750cf8087"
+    },
+    {
+      "path": "src/assets/images/bg.svg",
+      "sha1": "4842c6ba67c8027b970a94ee388ea5ae07c27f01"
+    },
+    {
+      "path": "src/assets/images/branc_logo_1.png",
+      "sha1": "2a174e3221a90a29bb7b7b99b089d258920bcfb3"
+    },
+    {
+      "path": "src/assets/images/branc_logo_2.png",
+      "sha1": "2a3d93b55e8dcb5963c53766028eace6fd26a575"
+    },
+    {
+      "path": "src/assets/images/company_brand.png",
+      "sha1": "75e14ed097bc651c99a40e96173d0ae10d483c17"
+    },
+    {
+      "path": "src/assets/images/coupan_bg.png",
+      "sha1": "c30efc451b32e10fd1ec8ff288739fcd441adc45"
+    },
+    {
+      "path": "src/assets/images/dine_nd_win_icon.png",
+      "sha1": "221e2f2f72b2b1179b0f699bb362e570d46391b8"
+    },
+    {
+      "path": "src/assets/images/dummy_icon.png",
+      "sha1": "405b7175cb44d983c08a1c8035246514ffd1f2dd"
+    },
+    {
+      "path": "src/assets/images/food_menu_banner.png",
+      "sha1": "b42761c42f4bc807d4a2a0d0893ed657b85bb43d"
+    },
+    {
+      "path": "src/assets/images/fp_1.png",
+      "sha1": "7904b3ae99b102e9602f4f42347ddb24df63e59d"
+    },
+    {
+      "path": "src/assets/images/fp_2.png",
+      "sha1": "c5a7cd4dd78493f8f33178bb0fd064080bbd2943"
+    },
+    {
+      "path": "src/assets/images/fp_3.png",
+      "sha1": "89a66d803151365feb85353f5ff67343843ef626"
+    },
+    {
+      "path": "src/assets/images/fp_4.png",
+      "sha1": "3c0598021d9cc61bd04db5640d15abb1aae25a7e"
+    },
+    {
+      "path": "src/assets/images/fp_5.png",
+      "sha1": "c1e7eafb733fbafa010478e1ee2d14218130aa80"
+    },
+    {
+      "path": "src/assets/images/guard_icon.png",
+      "sha1": "7b8f115f56eb76ac909a9944d7cde0421ff40c1c"
+    },
+    {
+      "path": "src/assets/images/index.js",
+      "sha1": "7e5e361fe1aca8585ceb0abbd322b06f307d6b0b"
+    },
+    {
+      "path": "src/assets/images/invite_human_icon.png",
+      "sha1": "6883671951c9fe837835d02d6af652b73a64dd9d"
+    },
+    {
+      "path": "src/assets/images/knob.png",
+      "sha1": "2b8612bf976ad27a58980af0710e8a955fc1278b"
+    },
+    {
+      "path": "src/assets/images/login_pattern.png",
+      "sha1": "154969415bb25c9984c73632c94a8d89a410c91c"
+    },
+    {
+      "path": "src/assets/images/loyalty_type_container.png",
+      "sha1": "3864ccceeded9d2f7a388004f2b83df93ca90616"
+    },
+    {
+      "path": "src/assets/images/notebook_icon.png",
+      "sha1": "61b457c8a0c6062d8a864d909305d09c1f0170e0"
+    },
+    {
+      "path": "src/assets/images/offer.png",
+      "sha1": "d43453a54f610cf0b4d1f77b791dbc61cd8f0ec5"
+    },
+    {
+      "path": "src/assets/images/offerImage.png",
+      "sha1": "df9cfd4463744b9005e3429f9cf70fd470b6440a"
+    },
+    {
+      "path": "src/assets/images/offer_card.png",
+      "sha1": "665a0da4af024ec69c898ce9ecf3a41659ec074c"
+    },
+    {
+      "path": "src/assets/images/scrach_card.png",
+      "sha1": "790c980f25856a66825df84a252e8ece17117715"
+    },
+    {
+      "path": "src/assets/images/scratch-pattern.jpeg",
+      "sha1": "02a4db367174baa2f1d42d149bd4d4dd7627ba12"
+    },
+    {
+      "path": "src/assets/images/scratchMask/mask_1.png",
+      "sha1": "286d9a2bd8f9ae39c20a583365506b281f0b7f40"
+    },
+    {
+      "path": "src/assets/images/svg/Badge.js",
+      "sha1": "562365d7307f4a098defb5511d5298c8fa3f19e7"
+    },
+    {
+      "path": "src/assets/images/svg/Clock.js",
+      "sha1": "23e991586924d67765b02041f001853658119044"
+    },
+    {
+      "path": "src/assets/images/svg/DisableSpinWheel.js",
+      "sha1": "fc69f159665c70547003ca681de23098b051ac28"
+    },
+    {
+      "path": "src/assets/images/svg/LoyaltyCoin.js",
+      "sha1": "fb4ba6c7036577e18bf4bbd13b2eedd1f708a227"
+    },
+    {
+      "path": "src/assets/images/svg/SpinKnob.js",
+      "sha1": "e12eb410c861748a0607056260cb16fd7ea606d4"
+    },
+    {
+      "path": "src/assets/images/svg/SpinWheelSVG.js",
+      "sha1": "3a9e2419958bc249a2703fb86079a09a9ed96284"
+    },
+    {
+      "path": "src/assets/images/wheel_icon.png",
+      "sha1": "2bf0c70af71f2781d089b1d0f5ddd95564db8ee6"
+    }
+  ]
+}

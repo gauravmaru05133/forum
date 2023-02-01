@@ -1,0 +1,22 @@
+const screenName = {
+    SPLASH:'Splash',
+    HOME:'Home',
+    SURVEY:'Survey',
+    LOYALTYHUB:'LoyaltyHub',
+    EARNTOUNLOCKLOYALTY:'EarnToUnlock',
+    SCRATCHCARD:'ScratchCard',
+    SPIN_WHEEL_LIST:'SpinWheelList',
+    DINE_ND_WIN:'DineNDWin',
+    LOGIN:'Login',
+    OTP:'OTP',
+    SCRATCHCARDLIST: "ScratchCardList",
+    OFFERLIST: "OfferList",
+    OFFERDETAILS: "OfferDetails",
+    PROFILE: "Profile",
+    PROFILEDETAILS: "ProfileDetails",
+    HELP: "Help",
+    DELETEACCOUNT: "Delete Account",
+    SUBMITDELETE: "Submit Delete",
+    DELETESUCCESSFUL: "Delete Successful",
+}
+export default screenName;

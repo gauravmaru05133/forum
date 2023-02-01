@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Casual Dining"
+    },
+    {
+        "id": 2,
+        "title": "Fine Dining"
+    },
+    {
+        "id": 3,
+        "title": "Cafe"
+    },
+    {
+        "id": 4,
+        "title": "Choice 4"
+    },
+    {
+        "id": 5,
+        "title": "Choice 5"
+    },
+    {
+        "id": 6,
+        "title": "Choice 6"
+    },
+    {
+        "id": 7,
+        "title": "Choice 7"
+    }
+]

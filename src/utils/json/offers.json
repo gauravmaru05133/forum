@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "Black Tap",
+        "description": "Get upto 10% off, on your next order at Black tap.",
+        "unlockCoin":"500",
+        "hots":true,
+        "tnc":[
+            "Applicable only on orders worth QAR 399 or more.",
+            "Not valid with any other discounts or promotions.",
+            "No cash value.",
+            "Valid till 7th Jul, 2022."
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Tarihi Unkapani Tarihi Pilavcisi",
+        "description": "Get upto 10% off, on your next order at Tarihi Unkapani Tarihi Pilavcisi.",
+        "unlockCoin":"5000",
+        "hots":false
+    },
+    {
+        "id": 3,
+        "title": "Choice 3",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "unlockCoin":"500",
+        "hots":false
+    },
+    {
+        "id": 4,
+        "title": "Choice 4",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "unlockCoin":"500",
+        "hots":false
+    },
+    {
+        "id": 5,
+        "title": "Choice 5",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "unlockCoin":"500",
+        "hots":false
+    },
+    {
+        "id": 6,
+        "title": "Choice 6",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "unlockCoin":"500",
+        "hots":false
+    },
+    {
+        "id": 7,
+        "title": "Choice 7",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "unlockCoin":"500",
+        "hots":false
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "title": "Your Scratch Cards",
+        "subTitle": "Benefits Earned",
+        "iconId":4.13
+    },
+    {
+        "id": 2,
+        "title": "Your Wheel of Fortune",
+        "subTitle": "Benefits Earned",
+        "iconId":4.12
+    },
+    {
+        "id": 3,
+        "title": "Your Offers",
+        "subTitle": "Your Unlocked, Used & Transferred Coupons",
+        "iconId":5.11
+    },
+    {
+        "id": 4,
+        "title": "Order History",
+        "iconId":5.12
+    },
+    {
+        "id": 5,
+        "title": "Your Favourite Stores",
+        "iconId":3.14
+    },
+    {
+        "id": 6,
+        "title": "Your Activities",
+        "iconId":2.14
+    },
+    {
+        "id": 7,
+        "title": "Help",
+        "subTitle": "Account, FAQ, Support, Privacy Policy, About",
+        "iconId":3.6
+    },
+    {
+        "id": 7,
+        "title": "Logout",
+        "iconId":5.10
+    }
+]

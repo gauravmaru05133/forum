@@ -1,0 +1,914 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* forumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* forumTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-forum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-forum.a */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		7699B88040F8A987B510C191 /* libPods-forum-forumTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-forum-forumTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		DD68DAFA9CD744BB951845B9 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2499B2DEF8E42998B3EB8AA /* app_icon.png */; };
+		623222CFE716449B825D11AD /* app_logo_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B60FE2FD596140FC95AC94D6 /* app_logo_large.png */; };
+		EC3E0BCFD2294B618E016F37 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E1456878A2F24504A97BFCC0 /* bg.png */; };
+		D2104FE176764210B22301CA /* bg.svg in Resources */ = {isa = PBXBuildFile; fileRef = E3BFFBA891EA49D5BCE14198 /* bg.svg */; };
+		C883A86DE91A4D38836BA9B8 /* branc_logo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E97110E39AC449BAB6B8C1F /* branc_logo_1.png */; };
+		6ED288CFF4864450859BC999 /* branc_logo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E548F6282CC43E1974E368D /* branc_logo_2.png */; };
+		64FA2EBFF8F842DC9083FC41 /* dine_nd_win_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B357BDC54EE0417B92DF9035 /* dine_nd_win_icon.png */; };
+		E4C95CE8617A4898B0099545 /* dummy_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3816AA0B0AE4A9F861315D8 /* dummy_icon.png */; };
+		974139D4263C486B8F85CA66 /* food_menu_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB8FED7343D4ED78CA22263 /* food_menu_banner.png */; };
+		AC5828CE50304FE8846D8AA6 /* fp_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBC849A3E2E7498D9C3D75F2 /* fp_1.png */; };
+		FC711FFC73544C58BF4E437C /* fp_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C83F15E1C056485AA346FCBD /* fp_2.png */; };
+		A2B7EF4F450944959F369BB4 /* fp_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8327B4DC0A6D42E7A78C484B /* fp_3.png */; };
+		3E2F3639F3B143E19D0C7B27 /* fp_4.png in Resources */ = {isa = PBXBuildFile; fileRef = F68CAE98028C4D1D9A691E95 /* fp_4.png */; };
+		3C41AA5BDA4E40D38B52F03B /* fp_5.png in Resources */ = {isa = PBXBuildFile; fileRef = A06B9CD67BB94A3AB96B7ACB /* fp_5.png */; };
+		8AEFE2A1DF3F4E5BB1D01C5B /* guard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 570A226EDBCA4FFBBB77DCC5 /* guard_icon.png */; };
+		FDF67D178504433EAD62C638 /* invite_human_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C8D4EFAD42C492D8C633796 /* invite_human_icon.png */; };
+		11440046074441EF8891BF28 /* knob.png in Resources */ = {isa = PBXBuildFile; fileRef = 13230416BCB647AE99ABCFC5 /* knob.png */; };
+		315025C753264560A7C2CF8C /* login_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 4005CC0DCCE64B448AB1444E /* login_pattern.png */; };
+		7B626FFEF5884B37954296B6 /* loyalty_type_container.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3C89A626954FA7BB7A531A /* loyalty_type_container.png */; };
+		3BB27B73C2FA473084D62B00 /* notebook_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E444D59A9A014F92A984BFE2 /* notebook_icon.png */; };
+		2C9214A1D6C44918A1FB6F6F /* offer.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F59D4F6582548C5ACB96AC1 /* offer.png */; };
+		11842A481EA7461387AECD77 /* offerImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BE019556043BDB5DA2EC4 /* offerImage.png */; };
+		4729852C78DF4BA69D28CC7E /* offer_card.png in Resources */ = {isa = PBXBuildFile; fileRef = A541843397744B25A58A63FB /* offer_card.png */; };
+		D5626DCDBA0E48E2A5D8718F /* scrach_card.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCAED95E99A402FAB3AB897 /* scrach_card.png */; };
+		8ABA29FE4C1C4488816A21BA /* scratch-pattern.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 99475DF1028F4882B2A26754 /* scratch-pattern.jpeg */; };
+		E15016C1EBF647ECB1FC816C /* mask_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CD646FDD01D44B889A5CDF3 /* mask_1.png */; };
+		C602997CC53D47F48D2F071C /* Badge.js in Resources */ = {isa = PBXBuildFile; fileRef = D3692B7A0B894EB3AFCBE88F /* Badge.js */; };
+		F8533ED4561E4AFBA53BDA88 /* Clock.js in Resources */ = {isa = PBXBuildFile; fileRef = FD7939C378644A5A9B7F89EA /* Clock.js */; };
+		26B211EE8A524B758BA62FF0 /* DisableSpinWheel.js in Resources */ = {isa = PBXBuildFile; fileRef = D3C015F12C28459E92A592C1 /* DisableSpinWheel.js */; };
+		0709E7B6EC3C4E62A466B358 /* LoyaltyCoin.js in Resources */ = {isa = PBXBuildFile; fileRef = DFCC04F9E13F484395D9D5AC /* LoyaltyCoin.js */; };
+		3EE80E79A4C041D1BFF7854B /* SpinKnob.js in Resources */ = {isa = PBXBuildFile; fileRef = 028E34116B1047FF9EDA93A1 /* SpinKnob.js */; };
+		6E38FA3E22E644AAAA056483 /* SpinWheelSVG.js in Resources */ = {isa = PBXBuildFile; fileRef = A0397B507D3D491CB532D3AE /* SpinWheelSVG.js */; };
+		BE116C9FAD864ABC82521C54 /* wheel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F571567C04178B25FAD6A /* wheel_icon.png */; };
+		83D73D2161FB47F9869C6936 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20D1A5AA5D394C82A0B408F2 /* Montserrat-Black.ttf */; };
+		61A424BB1A984801A0E62066 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88AA372FA0AE420B8E544F0C /* Montserrat-Bold.ttf */; };
+		C478E2DC92354C3F88198718 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A138DF112F0943E3A246C93F /* Montserrat-BoldItalic.ttf */; };
+		13CDFF9A59A34741ADBF9678 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5B3F9B81A804EE88FFE0E45 /* Montserrat-ExtraBold.ttf */; };
+		EF62200A3F06407095D5ABCB /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0D7E37A41A34310BACAB227 /* Montserrat-ExtraLight.ttf */; };
+		5026720871404946A8F5B6F4 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB93CE11F124F238D80CFC0 /* Montserrat-Italic.ttf */; };
+		A8F03E90FA194B7F8537B035 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 425570D50F6B463AA7DA4BA1 /* Montserrat-Light.ttf */; };
+		37F68F9AE3F747139F0F3082 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F72505A9D42F4771A91BB679 /* Montserrat-LightItalic.ttf */; };
+		A6A5E18F7B0F4CD09B28390E /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9517A120D36C4CCC8F292015 /* Montserrat-Medium.ttf */; };
+		25656449FFC2400BA0808DAC /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C26881F542D4F4AB155DDA0 /* Montserrat-MediumItalic.ttf */; };
+		4D1454AD8DBD432DACCDD8C1 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 127851B79E7B4C4A83DA40FD /* Montserrat-Regular.ttf */; };
+		28FEC0F76CCF40BDA9A5E165 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 034CDCE52C0B44439140A65E /* Montserrat-SemiBold.ttf */; };
+		7694076A592E46DEAC09EE2D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E982FB0941844429B463A53 /* Montserrat-SemiBoldItalic.ttf */; };
+		689CB6FCDE7E4F2CB14FF7D7 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FE2E349259341B2BAA14434 /* Montserrat-Thin.ttf */; };
+		A1EFDA36C6C24BD889525DC3 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C0FCFC22AF547DF9600BB98 /* Montserrat-ThinItalic.ttf */; };
+		77891B5F35894ACFB1DF71F4 /* company_brand.png in Resources */ = {isa = PBXBuildFile; fileRef = 9305D174F2764EBCAC7B35AE /* company_brand.png */; };
+		B449C8CD7AE7426EB41A3461 /* coupan_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DFF36AE356AC469A8054EF5F /* coupan_bg.png */; };
+		71F12478911F4C1B8FE95216 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 1AE2D5F6A0F94CE0BC357167 /* index.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = forum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* forumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = forumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* forumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = forumTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* forum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = forum/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = forum/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = forum/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = forum/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = forum/main.m; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-forum-forumTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-forum-forumTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-forum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forum.debug.xcconfig"; path = "Target Support Files/Pods-forum/Pods-forum.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-forum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forum.release.xcconfig"; path = "Target Support Files/Pods-forum/Pods-forum.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-forum-forumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forum-forumTests.debug.xcconfig"; path = "Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-forum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-forum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = forum/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-forum-forumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-forum-forumTests.release.xcconfig"; path = "Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E2499B2DEF8E42998B3EB8AA /* app_icon.png */ = {isa = PBXFileReference; name = "app_icon.png"; path = "../src/assets/images/app_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B60FE2FD596140FC95AC94D6 /* app_logo_large.png */ = {isa = PBXFileReference; name = "app_logo_large.png"; path = "../src/assets/images/app_logo_large.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E1456878A2F24504A97BFCC0 /* bg.png */ = {isa = PBXFileReference; name = "bg.png"; path = "../src/assets/images/bg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E3BFFBA891EA49D5BCE14198 /* bg.svg */ = {isa = PBXFileReference; name = "bg.svg"; path = "../src/assets/images/bg.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E97110E39AC449BAB6B8C1F /* branc_logo_1.png */ = {isa = PBXFileReference; name = "branc_logo_1.png"; path = "../src/assets/images/branc_logo_1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E548F6282CC43E1974E368D /* branc_logo_2.png */ = {isa = PBXFileReference; name = "branc_logo_2.png"; path = "../src/assets/images/branc_logo_2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B357BDC54EE0417B92DF9035 /* dine_nd_win_icon.png */ = {isa = PBXFileReference; name = "dine_nd_win_icon.png"; path = "../src/assets/images/dine_nd_win_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C3816AA0B0AE4A9F861315D8 /* dummy_icon.png */ = {isa = PBXFileReference; name = "dummy_icon.png"; path = "../src/assets/images/dummy_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2EB8FED7343D4ED78CA22263 /* food_menu_banner.png */ = {isa = PBXFileReference; name = "food_menu_banner.png"; path = "../src/assets/images/food_menu_banner.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EBC849A3E2E7498D9C3D75F2 /* fp_1.png */ = {isa = PBXFileReference; name = "fp_1.png"; path = "../src/assets/images/fp_1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C83F15E1C056485AA346FCBD /* fp_2.png */ = {isa = PBXFileReference; name = "fp_2.png"; path = "../src/assets/images/fp_2.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8327B4DC0A6D42E7A78C484B /* fp_3.png */ = {isa = PBXFileReference; name = "fp_3.png"; path = "../src/assets/images/fp_3.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F68CAE98028C4D1D9A691E95 /* fp_4.png */ = {isa = PBXFileReference; name = "fp_4.png"; path = "../src/assets/images/fp_4.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A06B9CD67BB94A3AB96B7ACB /* fp_5.png */ = {isa = PBXFileReference; name = "fp_5.png"; path = "../src/assets/images/fp_5.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		570A226EDBCA4FFBBB77DCC5 /* guard_icon.png */ = {isa = PBXFileReference; name = "guard_icon.png"; path = "../src/assets/images/guard_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8C8D4EFAD42C492D8C633796 /* invite_human_icon.png */ = {isa = PBXFileReference; name = "invite_human_icon.png"; path = "../src/assets/images/invite_human_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		13230416BCB647AE99ABCFC5 /* knob.png */ = {isa = PBXFileReference; name = "knob.png"; path = "../src/assets/images/knob.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4005CC0DCCE64B448AB1444E /* login_pattern.png */ = {isa = PBXFileReference; name = "login_pattern.png"; path = "../src/assets/images/login_pattern.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CF3C89A626954FA7BB7A531A /* loyalty_type_container.png */ = {isa = PBXFileReference; name = "loyalty_type_container.png"; path = "../src/assets/images/loyalty_type_container.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E444D59A9A014F92A984BFE2 /* notebook_icon.png */ = {isa = PBXFileReference; name = "notebook_icon.png"; path = "../src/assets/images/notebook_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5F59D4F6582548C5ACB96AC1 /* offer.png */ = {isa = PBXFileReference; name = "offer.png"; path = "../src/assets/images/offer.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		186BE019556043BDB5DA2EC4 /* offerImage.png */ = {isa = PBXFileReference; name = "offerImage.png"; path = "../src/assets/images/offerImage.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A541843397744B25A58A63FB /* offer_card.png */ = {isa = PBXFileReference; name = "offer_card.png"; path = "../src/assets/images/offer_card.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACCAED95E99A402FAB3AB897 /* scrach_card.png */ = {isa = PBXFileReference; name = "scrach_card.png"; path = "../src/assets/images/scrach_card.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		99475DF1028F4882B2A26754 /* scratch-pattern.jpeg */ = {isa = PBXFileReference; name = "scratch-pattern.jpeg"; path = "../src/assets/images/scratch-pattern.jpeg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5CD646FDD01D44B889A5CDF3 /* mask_1.png */ = {isa = PBXFileReference; name = "mask_1.png"; path = "../src/assets/images/scratchMask/mask_1.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D3692B7A0B894EB3AFCBE88F /* Badge.js */ = {isa = PBXFileReference; name = "Badge.js"; path = "../src/assets/images/svg/Badge.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FD7939C378644A5A9B7F89EA /* Clock.js */ = {isa = PBXFileReference; name = "Clock.js"; path = "../src/assets/images/svg/Clock.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D3C015F12C28459E92A592C1 /* DisableSpinWheel.js */ = {isa = PBXFileReference; name = "DisableSpinWheel.js"; path = "../src/assets/images/svg/DisableSpinWheel.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DFCC04F9E13F484395D9D5AC /* LoyaltyCoin.js */ = {isa = PBXFileReference; name = "LoyaltyCoin.js"; path = "../src/assets/images/svg/LoyaltyCoin.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		028E34116B1047FF9EDA93A1 /* SpinKnob.js */ = {isa = PBXFileReference; name = "SpinKnob.js"; path = "../src/assets/images/svg/SpinKnob.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0397B507D3D491CB532D3AE /* SpinWheelSVG.js */ = {isa = PBXFileReference; name = "SpinWheelSVG.js"; path = "../src/assets/images/svg/SpinWheelSVG.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8C3F571567C04178B25FAD6A /* wheel_icon.png */ = {isa = PBXFileReference; name = "wheel_icon.png"; path = "../src/assets/images/wheel_icon.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		20D1A5AA5D394C82A0B408F2 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; name = "Montserrat-Black.ttf"; path = "../src/assets/fonts/Montserrat-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		88AA372FA0AE420B8E544F0C /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A138DF112F0943E3A246C93F /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-BoldItalic.ttf"; path = "../src/assets/fonts/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D5B3F9B81A804EE88FFE0E45 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-ExtraBold.ttf"; path = "../src/assets/fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D0D7E37A41A34310BACAB227 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Montserrat-ExtraLight.ttf"; path = "../src/assets/fonts/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2FB93CE11F124F238D80CFC0 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; name = "Montserrat-Italic.ttf"; path = "../src/assets/fonts/Montserrat-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		425570D50F6B463AA7DA4BA1 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; name = "Montserrat-Light.ttf"; path = "../src/assets/fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F72505A9D42F4771A91BB679 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-LightItalic.ttf"; path = "../src/assets/fonts/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9517A120D36C4CCC8F292015 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C26881F542D4F4AB155DDA0 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-MediumItalic.ttf"; path = "../src/assets/fonts/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		127851B79E7B4C4A83DA40FD /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		034CDCE52C0B44439140A65E /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E982FB0941844429B463A53 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1FE2E349259341B2BAA14434 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; name = "Montserrat-Thin.ttf"; path = "../src/assets/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6C0FCFC22AF547DF9600BB98 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-ThinItalic.ttf"; path = "../src/assets/fonts/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9305D174F2764EBCAC7B35AE /* company_brand.png */ = {isa = PBXFileReference; name = "company_brand.png"; path = "../src/assets/images/company_brand.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DFF36AE356AC469A8054EF5F /* coupan_bg.png */ = {isa = PBXFileReference; name = "coupan_bg.png"; path = "../src/assets/images/coupan_bg.png"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		894421566AA44F25A250C9D7 /* index.js */ = {isa = PBXFileReference; name = "index.js"; path = "../src/assets/images/index.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1AE2D5F6A0F94CE0BC357167 /* index.js */ = {isa = PBXFileReference; name = "index.js"; path = "../src/assets/fonts/index.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7699B88040F8A987B510C191 /* libPods-forum-forumTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C80B921A6F3F58F76C31292 /* libPods-forum.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* forumTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* forumTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = forumTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* forum */ = {
+			isa = PBXGroup;
+			children = (
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+			);
+			name = forum;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-forum.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-forum-forumTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* forum */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* forumTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				BE5B89440BD946ABB25558BB /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* forum.app */,
+				00E356EE1AD99517003FC87E /* forumTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B4392A12AC88292D35C810B /* Pods-forum.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-forum.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-forum-forumTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-forum-forumTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE5B89440BD946ABB25558BB /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				E2499B2DEF8E42998B3EB8AA /* app_icon.png */,
+				B60FE2FD596140FC95AC94D6 /* app_logo_large.png */,
+				E1456878A2F24504A97BFCC0 /* bg.png */,
+				E3BFFBA891EA49D5BCE14198 /* bg.svg */,
+				5E97110E39AC449BAB6B8C1F /* branc_logo_1.png */,
+				9E548F6282CC43E1974E368D /* branc_logo_2.png */,
+				B357BDC54EE0417B92DF9035 /* dine_nd_win_icon.png */,
+				C3816AA0B0AE4A9F861315D8 /* dummy_icon.png */,
+				2EB8FED7343D4ED78CA22263 /* food_menu_banner.png */,
+				EBC849A3E2E7498D9C3D75F2 /* fp_1.png */,
+				C83F15E1C056485AA346FCBD /* fp_2.png */,
+				8327B4DC0A6D42E7A78C484B /* fp_3.png */,
+				F68CAE98028C4D1D9A691E95 /* fp_4.png */,
+				A06B9CD67BB94A3AB96B7ACB /* fp_5.png */,
+				570A226EDBCA4FFBBB77DCC5 /* guard_icon.png */,
+				8C8D4EFAD42C492D8C633796 /* invite_human_icon.png */,
+				13230416BCB647AE99ABCFC5 /* knob.png */,
+				4005CC0DCCE64B448AB1444E /* login_pattern.png */,
+				CF3C89A626954FA7BB7A531A /* loyalty_type_container.png */,
+				E444D59A9A014F92A984BFE2 /* notebook_icon.png */,
+				5F59D4F6582548C5ACB96AC1 /* offer.png */,
+				186BE019556043BDB5DA2EC4 /* offerImage.png */,
+				A541843397744B25A58A63FB /* offer_card.png */,
+				ACCAED95E99A402FAB3AB897 /* scrach_card.png */,
+				99475DF1028F4882B2A26754 /* scratch-pattern.jpeg */,
+				5CD646FDD01D44B889A5CDF3 /* mask_1.png */,
+				D3692B7A0B894EB3AFCBE88F /* Badge.js */,
+				FD7939C378644A5A9B7F89EA /* Clock.js */,
+				D3C015F12C28459E92A592C1 /* DisableSpinWheel.js */,
+				DFCC04F9E13F484395D9D5AC /* LoyaltyCoin.js */,
+				028E34116B1047FF9EDA93A1 /* SpinKnob.js */,
+				A0397B507D3D491CB532D3AE /* SpinWheelSVG.js */,
+				8C3F571567C04178B25FAD6A /* wheel_icon.png */,
+				20D1A5AA5D394C82A0B408F2 /* Montserrat-Black.ttf */,
+				88AA372FA0AE420B8E544F0C /* Montserrat-Bold.ttf */,
+				A138DF112F0943E3A246C93F /* Montserrat-BoldItalic.ttf */,
+				D5B3F9B81A804EE88FFE0E45 /* Montserrat-ExtraBold.ttf */,
+				D0D7E37A41A34310BACAB227 /* Montserrat-ExtraLight.ttf */,
+				2FB93CE11F124F238D80CFC0 /* Montserrat-Italic.ttf */,
+				425570D50F6B463AA7DA4BA1 /* Montserrat-Light.ttf */,
+				F72505A9D42F4771A91BB679 /* Montserrat-LightItalic.ttf */,
+				9517A120D36C4CCC8F292015 /* Montserrat-Medium.ttf */,
+				7C26881F542D4F4AB155DDA0 /* Montserrat-MediumItalic.ttf */,
+				127851B79E7B4C4A83DA40FD /* Montserrat-Regular.ttf */,
+				034CDCE52C0B44439140A65E /* Montserrat-SemiBold.ttf */,
+				1E982FB0941844429B463A53 /* Montserrat-SemiBoldItalic.ttf */,
+				1FE2E349259341B2BAA14434 /* Montserrat-Thin.ttf */,
+				6C0FCFC22AF547DF9600BB98 /* Montserrat-ThinItalic.ttf */,
+				9305D174F2764EBCAC7B35AE /* company_brand.png */,
+				DFF36AE356AC469A8054EF5F /* coupan_bg.png */,
+				894421566AA44F25A250C9D7 /* index.js */,
+				1AE2D5F6A0F94CE0BC357167 /* index.js */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* forumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "forumTests" */;
+			buildPhases = (
+				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
+				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = forumTests;
+			productName = forumTests;
+			productReference = 00E356EE1AD99517003FC87E /* forumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* forum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "forum" */;
+			buildPhases = (
+				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
+				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = forum;
+			productName = forum;
+			productReference = 13B07F961A680F5B00A75B9A /* forum.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "forum" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* forum */,
+				00E356ED1AD99517003FC87E /* forumTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				DD68DAFA9CD744BB951845B9 /* app_icon.png in Resources */,
+				623222CFE716449B825D11AD /* app_logo_large.png in Resources */,
+				EC3E0BCFD2294B618E016F37 /* bg.png in Resources */,
+				D2104FE176764210B22301CA /* bg.svg in Resources */,
+				C883A86DE91A4D38836BA9B8 /* branc_logo_1.png in Resources */,
+				6ED288CFF4864450859BC999 /* branc_logo_2.png in Resources */,
+				64FA2EBFF8F842DC9083FC41 /* dine_nd_win_icon.png in Resources */,
+				E4C95CE8617A4898B0099545 /* dummy_icon.png in Resources */,
+				974139D4263C486B8F85CA66 /* food_menu_banner.png in Resources */,
+				AC5828CE50304FE8846D8AA6 /* fp_1.png in Resources */,
+				FC711FFC73544C58BF4E437C /* fp_2.png in Resources */,
+				A2B7EF4F450944959F369BB4 /* fp_3.png in Resources */,
+				3E2F3639F3B143E19D0C7B27 /* fp_4.png in Resources */,
+				3C41AA5BDA4E40D38B52F03B /* fp_5.png in Resources */,
+				8AEFE2A1DF3F4E5BB1D01C5B /* guard_icon.png in Resources */,
+				FDF67D178504433EAD62C638 /* invite_human_icon.png in Resources */,
+				11440046074441EF8891BF28 /* knob.png in Resources */,
+				315025C753264560A7C2CF8C /* login_pattern.png in Resources */,
+				7B626FFEF5884B37954296B6 /* loyalty_type_container.png in Resources */,
+				3BB27B73C2FA473084D62B00 /* notebook_icon.png in Resources */,
+				2C9214A1D6C44918A1FB6F6F /* offer.png in Resources */,
+				11842A481EA7461387AECD77 /* offerImage.png in Resources */,
+				4729852C78DF4BA69D28CC7E /* offer_card.png in Resources */,
+				D5626DCDBA0E48E2A5D8718F /* scrach_card.png in Resources */,
+				8ABA29FE4C1C4488816A21BA /* scratch-pattern.jpeg in Resources */,
+				E15016C1EBF647ECB1FC816C /* mask_1.png in Resources */,
+				C602997CC53D47F48D2F071C /* Badge.js in Resources */,
+				F8533ED4561E4AFBA53BDA88 /* Clock.js in Resources */,
+				26B211EE8A524B758BA62FF0 /* DisableSpinWheel.js in Resources */,
+				0709E7B6EC3C4E62A466B358 /* LoyaltyCoin.js in Resources */,
+				3EE80E79A4C041D1BFF7854B /* SpinKnob.js in Resources */,
+				6E38FA3E22E644AAAA056483 /* SpinWheelSVG.js in Resources */,
+				BE116C9FAD864ABC82521C54 /* wheel_icon.png in Resources */,
+				83D73D2161FB47F9869C6936 /* Montserrat-Black.ttf in Resources */,
+				61A424BB1A984801A0E62066 /* Montserrat-Bold.ttf in Resources */,
+				C478E2DC92354C3F88198718 /* Montserrat-BoldItalic.ttf in Resources */,
+				13CDFF9A59A34741ADBF9678 /* Montserrat-ExtraBold.ttf in Resources */,
+				EF62200A3F06407095D5ABCB /* Montserrat-ExtraLight.ttf in Resources */,
+				5026720871404946A8F5B6F4 /* Montserrat-Italic.ttf in Resources */,
+				A8F03E90FA194B7F8537B035 /* Montserrat-Light.ttf in Resources */,
+				37F68F9AE3F747139F0F3082 /* Montserrat-LightItalic.ttf in Resources */,
+				A6A5E18F7B0F4CD09B28390E /* Montserrat-Medium.ttf in Resources */,
+				25656449FFC2400BA0808DAC /* Montserrat-MediumItalic.ttf in Resources */,
+				4D1454AD8DBD432DACCDD8C1 /* Montserrat-Regular.ttf in Resources */,
+				28FEC0F76CCF40BDA9A5E165 /* Montserrat-SemiBold.ttf in Resources */,
+				7694076A592E46DEAC09EE2D /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				689CB6FCDE7E4F2CB14FF7D7 /* Montserrat-Thin.ttf in Resources */,
+				A1EFDA36C6C24BD889525DC3 /* Montserrat-ThinItalic.ttf in Resources */,
+				77891B5F35894ACFB1DF71F4 /* company_brand.png in Resources */,
+				B449C8CD7AE7426EB41A3461 /* coupan_bg.png in Resources */,
+				B0ACD7FC2EE44E59A6502C22 /* index.js in Resources */,
+				71F12478911F4C1B8FE95216 /* index.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum/Pods-forum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum/Pods-forum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-forum/Pods-forum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-forum-forumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-forum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum/Pods-forum-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum/Pods-forum-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-forum/Pods-forum-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-forum-forumTests/Pods-forum-forumTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* forumTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* forum */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-forum-forumTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = forumTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/forum.app/forum";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-forum-forumTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = forumTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/forum.app/forum";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-forum.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = forum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = forum;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-forum.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = forum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = forum;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DFOLLY_NO_CONFIG",
+					"-DFOLLY_MOBILE=1",
+					"-DFOLLY_USE_LIBCPP=1",
+				);
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "forumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "forum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "forum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}
