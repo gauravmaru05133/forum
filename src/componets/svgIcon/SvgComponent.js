@@ -37,7 +37,7 @@ const SvgComponent = ({
         viewBoxMain = "260 55 40 40"
     } else if (id == '1.9') {
         viewBoxMain = "293 55 40 40"
-    } else if (id == '1.10') {
+    } else if (id == 'gold_coin') {
         viewBoxMain = "325 55 40 40"
     } else if (id == '1.11') {
         viewBoxMain = "362 55 40 40"
@@ -98,7 +98,7 @@ const SvgComponent = ({
         viewBoxMain = "225 125 40 40"
     } else if (id == '3.7') {
         viewBoxMain = "260 125 40 40"
-    } else if (id == '3.8') {
+    } else if (id == 'chevron-right') {
         viewBoxMain = "293 125 40 40"
     } else if (id == '3.9') {
         viewBoxMain = "327 125 40 40"

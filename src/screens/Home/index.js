@@ -8,7 +8,6 @@ import {
   ImageBackground,
   ScrollView,
 } from "react-native";
-import AppButton from "../../componets/button/AppButton";
 import FeaturedProducts from "../../componets/featureProducts";
 import Header from "../../componets/header/Header";
 import HeaderTxt from "../../componets/headingTxt";
@@ -16,7 +15,7 @@ import ImageSlider from "../../componets/imageSlider";
 import Constant from "../../constant";
 import fetureProducts from "../../utils/json/featureProducts";
 import strings from "../../utils/strings";
-import { deviceWidth, fontSizes, imageResize } from "../../utils/variables";
+import { deviceHeight, deviceWidth, fontSizes, imageResize } from "../../utils/variables";
 import { navigationToScreen } from "../../utils/navigations";
 import screenName from "../../utils/screenName";
 import SvgComponent from "../../componets/svgIcon/SvgComponent";
@@ -27,7 +26,13 @@ import colors from "../../utils/colors";
 import fonts from "../../assets/fonts";
 import images from "../../assets/images";
 import AppImage from "../../componets/image/AppImage";
+import CouponRewardCell from "../../componets/CoupanRewardCell";
+import ExploreMore from "../../componets/ExploreMore";
+import appStyles from "../../utils/commonStyle";
+import AppButton from "../../componets/AppButton";
 
+
+const paddingHorizontal = 20
 const Home = ({ navigation }) => {
   const [couponsList, setCoupons] = useState([])
 
@@ -51,52 +56,17 @@ const Home = ({ navigation }) => {
 
   //render future products
   const renderFeatureProducts = ({ item, index }) => {
-    return (
-      <ImageBackground
-        source={images.coupanBg}
-        style={{ width: '100%', height: 100, marginBottom: 10, paddingVertical: 10 }}
-        resizeMode='stretch'
-      >
-        <View style={{ flex: 1, flexDirection: 'row' }}>
-          <View style={{ width: '20%', height: '93%' }}>
-            <AppImage
-              style={{ width: undefined, height: undefined, flex: 1 }}
-              source={item.img}
-              resizeMode={imageResize.stretch}
-            />
-          </View>
-          <View style={{ flex: 1, paddingHorizontal: 15 }}>
-            <CommonText
-              text={item.des}
-              style={{
-                fontSize: fontSizes.extraSmall, fontFamily: fonts.MontserratSemiBold,
-                color: colors.txt_color, paddingRight: 15, lineHeight: 18,flex:1
-              }}
-            />
-            <View style={{ flexDirection: 'row',alignContent:'center',alignItems:'center' }}>
-              <SvgComponent
-                id={'store'}
-                width={25}
-                height={25}
-                iconColor={'#6C3F99'}
-              />
-              <CommonText
-                text={item.title}
-                style={{
-                  fontSize: fontSizes.extraExtraSmall, fontFamily: fonts.MontserratRegular,
-                  color: '#6C3F99', paddingRight: 15, lineHeight: 18
-                }}
-              />
-            </View>
-          </View>
-        </View>
-      </ImageBackground>
-    )
+    return <CouponRewardCell
+      index={index}
+      item={item}
+      svgIcon1='store'
+      svgIcon2="gold_coin"
+    />
   }
 
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={appStyles.container}>
       <Header onPress={navigateToProfile}
         isShowAppIcon
         searchIcon
@@ -110,7 +80,7 @@ const Home = ({ navigation }) => {
             data={foodImageCatSlider}
             isDetailsEnable={false}
           />
-          <View style={{ paddingHorizontal: 20, }}>
+          <View style={{ paddingHorizontal: paddingHorizontal, }}>
             <ElevatedView style={{
               width: '100%', height: 50, flexDirection: 'row',
               backgroundColor: colors.offWhite, alignItems: 'center', borderRadius: 10,
@@ -128,24 +98,82 @@ const Home = ({ navigation }) => {
             </ElevatedView>
             <CommonText
               text={strings.coupon_for_you}
-              style={{ fontFamily: fonts.MontserratBold, fontSize: fontSizes.mediumLarge, color: colors.black }}
+              style={appStyles.heading_txt}
             />
             <CommonText
               text={strings.make_shopping_enjoyable}
-              style={{
-                fontFamily: fonts.MontserratRegular, fontSize: fontSizes.extraSmall,
-                color: colors.txtGray, marginTop: 4
-              }}
+              style={appStyles.thin_sec_title}
             />
-
             <FlatList
               data={couponsList}
               renderItem={renderFeatureProducts}
+              style={{ paddingVertical: 20 }}
               keyExtractor={(item, index) => index.toString()}
               showsVerticalScrollIndicator={false}
               showsHorizontalScrollIndicator={false}
             />
+
+            <ExploreMore
+              title={strings.explore_more_coupon}
+            />
+
           </View>
+
+          <View style={{
+            width: '100%', height: deviceHeight * 0.6,
+            backgroundColor: colors.purpleBackground, marginVertical: 20, padding: 20
+          }}>
+            <View style={{ flex: 1, backgroundColor: colors.white, }}>
+              <View style={{ flex: 1 }}>
+                <AppImage
+                  style={{ width: undefined, height: undefined, flex: 1 }}
+                  source={images.brandBanner}
+                  resizeMode={imageResize.contain}
+                />
+              </View>
+              <View style={{ paddingHorizontal:15,alignContent:'center',paddingTop:15 }}>
+                <CommonText
+                  text={strings.feature_brands_at_forum}
+                  style={appStyles.heading_txt}
+                />
+                <CommonText
+                  text={strings.delightful_reward_together}
+                  style={appStyles.thin_sec_title}
+                />
+                <AppButton
+                title={strings.view_all}
+                />
+              </View>
+            </View>
+          </View>
+
+          <View style={{ paddingHorizontal: paddingHorizontal,paddingBottom:30 }}>
+            <CommonText
+              text={strings.reward_for_you}
+              style={appStyles.heading_txt}
+            />
+            <CommonText
+              text={strings.delightful_reward_together}
+              style={appStyles.thin_sec_title}
+            />
+            <FlatList
+              data={couponsList}
+              renderItem={renderFeatureProducts}
+              style={{ paddingVertical: 20 }}
+              keyExtractor={(item, index) => index.toString()}
+              showsVerticalScrollIndicator={false}
+              showsHorizontalScrollIndicator={false}
+            />
+
+            <ExploreMore
+              title={strings.explore_more_rewards}
+            />
+          </View>
+
+          <ImageSlider
+            data={foodImageCatSlider}
+            isDetailsEnable={false}
+          />
 
         </View>
       </ScrollView>
@@ -162,5 +190,6 @@ const styles = StyleSheet.create({
     width: deviceWidth,
     height: 100,
   },
+
 });
 export default Home;

@@ -14,6 +14,13 @@ const appStyles = StyleSheet.create({
     modal_child_container:{
         width: '100%', height: '100%', 
    },
+   heading_txt:{
+    fontFamily: fonts.MontserratBold, fontSize: fontSizes.mediumLarge, color: colors.black 
+   },
+   thin_sec_title:{
+    fontFamily: fonts.MontserratRegular, fontSize: fontSizes.extraSmall,
+    color: colors.txtGray, marginTop: 4
+   },
    modal_title_txt:{
     fontFamily: fonts.TFArrowBold, fontSize: fontSizes.extraLarge, 
     color: colors.txt_color, paddingVertical: 15,

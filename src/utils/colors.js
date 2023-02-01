@@ -11,7 +11,8 @@ const colors = {
     disable_txt_color:"#BABABA",
     txt_color:"#434343",
     txtGray:'#909090',
-    appBackground:"#F5F5F5",
+    //appBackground:"#F5F5F5",
+    appBackground:"rgba(255,255,255,0.5)",
     offWhite:"#E6E9EB",
     greyTextColor:'#6F6F6F',
     highLightedText:"#00ACEF",
@@ -22,5 +23,8 @@ const colors = {
   red: "#C20000",
   highLightedText: "#007DBA",
   green: "#318E65",
+  purple:'#6C3F99',
+  purpleBackground:'#F0ECF5',
+  purpleBtn:"#56327A",
 }
 export default colors;

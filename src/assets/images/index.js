@@ -22,14 +22,14 @@ const mask_1 = require("./scratchMask/mask_1.png");
 const offerImage = require("./offerImage.png");
 const companyBrand = require("./company_brand.png");
 const coupanBg = require("./coupan_bg.png");
-
+const brandBanner = require("./brand_banner.png");
 
 const images = {
   appIcon, dummyProfileIcon, foodMenuSlider, fp1, fp2, fp3, fp4,
   fp5, guardIcon, offerCard, wheelIcon, scratchCard, notebookIcon, inviteHumanIcon,
   loyaltyHubTypeContainer, brandLogo1, brandLogo2, dineNdWinIcon,
   appLogoLargeIcon, loginPattern,
-  mask_1,
+  mask_1,brandBanner,
   offerImage,companyBrand,coupanBg
 }
 export default images

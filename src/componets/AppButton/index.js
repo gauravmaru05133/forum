@@ -68,15 +68,16 @@ const styles = (props = {}) =>
   StyleSheet.create({
     container: {
       borderRadius: 1,
-      marginVertical: 30,
+      marginVertical: 15,
       width: "100%",
-      backgroundColor: props.disabled ? colors.gray : colors.txt_color,
+      backgroundColor: props.disabled ? colors.gray : colors.purpleBtn,
       flexDirection: "row",
       height: 45,
       justifyContent: "center",
       alignItems: "center",
       alignCenter: "center",
       alignSelf: "center",
+      borderRadius:10
     },
     txtStyle: {
       fontSize: fontSizes.small,

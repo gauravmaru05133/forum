@@ -77,6 +77,11 @@ const strings = {
   which_store_u_looking_for:'Which store are you looking for?',
   coupon_for_you:'Coupons for you',
   make_shopping_enjoyable:'Make Shopping Enjoyable',
+  explore_more_coupon:"Explore more coupons",
+  feature_brands_at_forum:'Featured Brands at FORUM',
+  delightful_reward_together:"Delightful rewards for sticking together",
+  reward_for_you:"Rewards for you",
+  explore_more_rewards:"Explore more rewards",
 }
 
 export default strings
