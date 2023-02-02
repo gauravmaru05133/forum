@@ -26,5 +26,6 @@ const colors = {
   purple:'#6C3F99',
   purpleBackground:'#F0ECF5',
   purpleBtn:"#56327A",
+  thinTxt:"#7B7B7B",
 }
 export default colors;

@@ -29,13 +29,13 @@ const SvgComponent = ({
         viewBoxMain = "156 55 40 40"
     } else if (id == '1.5') {
         viewBoxMain = "190 55 40 40"
-    } else if (id == '1.6') {
+    } else if (id == 'share') {
         viewBoxMain = "225 55 40 40"
     } else if (id == '1.7') {
         viewBoxMain = "225 55 40 40"
     } else if (id == '1.8') {
         viewBoxMain = "260 55 40 40"
-    } else if (id == '1.9') {
+    } else if (id == 'heart') {
         viewBoxMain = "293 55 40 40"
     } else if (id == 'gold_coin') {
         viewBoxMain = "325 55 40 40"
@@ -217,14 +217,14 @@ const SvgComponent = ({
                 />
                 <Path
                     d="M318.5 67c3.038 0 5.5 2.5 5.5 6 0 7-7.5 11-10 12.5-2.5-1.5-10-5.5-10-12.5 0-3.5 2.5-6 5.5-6 1.86 0 3.5 1 4.5 2 1-1 2.64-2 4.5-2z"
-                    fill="#00ACEF"
+                    fill={iconColorM ? iconColorM :"#00ACEF" } 
                 />
                 <G clipPath={"url(#clip6_4645_58863)"}>
                     <Circle cx={348} cy={76} r={12} fill="url(#paint0_linear_4645_58863)" />
                     <Path
                         opacity={0.7}
                         transform="rotate(35.371 356.07 56)"
-                        fill="#FFE297"
+                        fill= "#FFE297"
                         d="M356.07 56.0003H363.2805V97.4715H356.07z"
                     />
                     <Path

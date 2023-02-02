@@ -2,7 +2,7 @@ import { View, Modal, StyleSheet } from "react-native";
 import React from "react";
 import CommonText from "../../componets/commonText";
 import CommonView from "../../componets/commonView";
-import AppButton from "../../componets/button/AppButton";
+import AppButton from "../../componets/AppButton";
 import Heading from "../heading";
 import strings from "../../utils/strings";
 import { fontSizes } from "../../utils/variables";

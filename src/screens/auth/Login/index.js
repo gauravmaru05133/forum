@@ -12,7 +12,7 @@ import colors from "../../../utils/colors";
 import { Slider } from '@miblanchard/react-native-slider';
 import SvgComponent from "../../../componets/svgIcon/SvgComponent";
 import loyaltyHubList from "../../../utils/json/loyaltyHubList";
-import AppButton from "../../../componets/button/AppButton";
+import AppButton from "../../../componets/AppButton";
 import earnZoneJson from "../../../utils/json/earnZone.json";
 import appStyles from "../../../utils/commonStyle";
 import Constant from "../../../constant";

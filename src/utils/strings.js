@@ -82,6 +82,7 @@ const strings = {
   delightful_reward_together:"Delightful rewards for sticking together",
   reward_for_you:"Rewards for you",
   explore_more_rewards:"Explore more rewards",
+  stay_updated:'Stay Updated',
 }
 
 export default strings
