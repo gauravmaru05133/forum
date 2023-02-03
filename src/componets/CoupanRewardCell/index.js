@@ -24,13 +24,13 @@ const CouponRewardCell = ({
                 <View style={styles.imgBackground}>
                     <AppImage
                         style={{ width: undefined, height: undefined, flex: 1 }}
-                        source={item.img}
+                        source={{uri:item.logo}}
                         resizeMode={imageResize.contain}
                     />
                 </View>
                 <View style={styles.coupon_details_view}>
                     <CommonText
-                        text={item.des}
+                        text={item.displayName}
                         style={styles.coupon_des}
                     />
                     <View style={styles.svgIconDetails}>
@@ -42,7 +42,7 @@ const CouponRewardCell = ({
                                 iconColor={svgIconColor ? svgIconColor : colors.purple}
                             />
                             <CommonText
-                                text={item.title}
+                                text={item.storeCategory}
                                 style={styles.svgTitle}
                             />
                         </View>
@@ -54,7 +54,7 @@ const CouponRewardCell = ({
                                 iconColor={svgIconColor ? svgIconColor : '#6C3F99'}
                             />
                             <CommonText
-                                text={item.price}
+                                text={item.rewardMonetaryValue}
                                 style={[styles.svgTitle, styles.svgPrice]}
                             />
                         </View>

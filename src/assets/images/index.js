@@ -27,12 +27,13 @@ const coffeeCupImg= require("./coffee_cup.png");
 const starBucks = require("./star_buck.png");
 const zaraIcon = require("./zara_icon.png");
 const dotImg = require('./dot.png')
+const appLogo = require('./app_logo.png')
 const images = {
   appIcon, dummyProfileIcon, foodMenuSlider, fp1, fp2, fp3, fp4,
   fp5, guardIcon, offerCard, wheelIcon, scratchCard, notebookIcon, inviteHumanIcon,
   loyaltyHubTypeContainer, brandLogo1, brandLogo2, dineNdWinIcon,
   appLogoLargeIcon, loginPattern,
   mask_1,brandBanner,coffeeCupImg,
-  offerImage,companyBrand,coupanBg,starBucks,zaraIcon,dotImg
+  offerImage,companyBrand,coupanBg,starBucks,zaraIcon,dotImg,appLogo
 }
 export default images

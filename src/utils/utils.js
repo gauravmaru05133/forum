@@ -16,6 +16,14 @@ export function responsiveSize(fontSize) {
     return (Math.sqrt((height * height) + (width * width)) * (fontSize / sizeDenominator));
 }
 
+//remove html tag
+export const removeHtmTag = (str)=>{
+    if ((str===null) || (str===''))
+        return false;
+    else
+        str = str.toString();
+    return str.replace( /(<([^>]+)>)/ig, '');
+}
 
 // only number allowed
 export const onlyNumberAllowed = (val) => {

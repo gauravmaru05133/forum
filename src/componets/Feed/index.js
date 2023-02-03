@@ -1,37 +1,19 @@
-import { useEffect, useState } from "react";
 import {
     View,
-    Text,
-    TouchableOpacity,
     StyleSheet,
-    FlatList,
-    ImageBackground,
-    ScrollView,
+    Platform,
 } from "react-native";
-import FeaturedProducts from "../../componets/featureProducts";
-import Header from "../../componets/header/Header";
-import HeaderTxt from "../../componets/headingTxt";
-import ImageSlider from "../../componets/imageSlider";
-import Constant from "../../constant";
-import fetureProducts from "../../utils/json/featureProducts";
-import strings from "../../utils/strings";
-import { deviceHeight, deviceWidth, fontSizes, imageResize } from "../../utils/variables";
-import { navigationToScreen } from "../../utils/navigations";
-import screenName from "../../utils/screenName";
+import { deviceHeight, fontSizes, imageResize } from "../../utils/variables";
 import SvgComponent from "../../componets/svgIcon/SvgComponent";
-import foodImageCatSlider from "../../utils/json/imageSlider.json";
-import ElevatedView from "../../componets/ElevatedView";
 import CommonText from "../../componets/commonText";
 import colors from "../../utils/colors";
 import fonts from "../../assets/fonts";
 import images from "../../assets/images";
 import AppImage from "../../componets/image/AppImage";
-import CouponRewardCell from "../../componets/CoupanRewardCell";
-import ExploreMore from "../../componets/ExploreMore";
-import appStyles from "../../utils/commonStyle";
-import AppButton from "../../componets/AppButton";
-import stayFeed from "../../utils/json/stayFeed";
 import { Divider } from "react-native-paper";
+import {  scale,verticalScale,moderateScale} from "react-native-size-matters";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { removeHtmTag } from "../../utils/utils";
 
 const Feed = ({ item, index }) => {
     return (
@@ -39,11 +21,11 @@ const Feed = ({ item, index }) => {
             <View style={styles.brand_cell_container}>
                 <AppImage
                     style={{ width: 40, height: 40 }}
-                    source={item.brandIcon}
+                    source={{uri:item?.retailerDetails?.retailerLogo}}
                 />
-                <View style={{ flex: 1,marginLeft:10 }}>
+                <View style={{ flex: 1, marginLeft: 10 }}>
                     <CommonText
-                        text={item.name}
+                        text={removeHtmTag(item.title)}
                         style={{ color: '#262626', fontFamily: fonts.MontserratBold, fontSize: fontSizes.small }}
                     />
                     <View style={{
@@ -51,7 +33,7 @@ const Feed = ({ item, index }) => {
                         alignItems: 'center',
                     }}>
                         <CommonText
-                            text={item.categories}
+                            text={item?.retailer?.retailerName}
                             style={{ color: '#262626', fontFamily: fonts.MontserratRegular, fontSize: fontSizes.extraExtraSmall }}
                         />
                         <AppImage
@@ -59,7 +41,7 @@ const Feed = ({ item, index }) => {
                             source={images.dotImg}
                         />
                         <CommonText
-                            text={item.categories_2}
+                            text={item?.retailer?.retailerRegisterName}
                             style={{ color: '#262626', fontFamily: fonts.MontserratRegular, fontSize: fontSizes.extraExtraSmall }}
                         />
                     </View>
@@ -67,11 +49,11 @@ const Feed = ({ item, index }) => {
 
                 </View>
             </View>
-            {item.bannerImg && (
+            {item.media.length>0 && (
                 <View style={styles.brand_cell_img}>
                     <AppImage
                         style={{ width: undefined, height: undefined, flex: 1 }}
-                        source={item.bannerImg}
+                        source={{uri:item.media[0].thumbnailUrl}}
                         resizeMode={imageResize.cover}
                     />
                 </View>
@@ -79,18 +61,18 @@ const Feed = ({ item, index }) => {
             {item.tag && (
                 <View style={styles.tag_container}>
                     <CommonText
-                        text={item.tag}
+                        text={item?.tag?.tagName}
                         style={styles.tag_txt}
                     />
                 </View>
             )}
             <View style={styles.cell_details_container}>
                 <CommonText
-                    text={item.title}
+                    text={removeHtmTag(item.title)}
                     style={styles.cell_title_txt}
                 />
                 <CommonText
-                    text={item.des}
+                    text={removeHtmTag(item.description) }
                     style={styles.cell_des_txt}
                 />
             </View>
@@ -105,7 +87,7 @@ const Feed = ({ item, index }) => {
                     width={30}
                 />
                 <CommonText
-                    text={item.like}
+                    text={`You and ${item?.totalLikes} other like this`}
                     style={styles.you_like_txt}
                 />
                 <SvgComponent
@@ -118,39 +100,40 @@ const Feed = ({ item, index }) => {
 }
 
 const styles = StyleSheet.create({
-    cell_container:{
+    cell_container: {
         marginBottom: 40,
     },
-    brand_cell_container:{
-        width: '100%', height: 50, flexDirection: 'row' 
+    brand_cell_container: {
+        width: '100%', height: 50, flexDirection: 'row'
     },
-    brand_cell_img:{
-        width: '100%', height: '55%', backgroundColor: 'red' 
+    brand_cell_img: {
+        width: '100%', height: deviceHeight * 0.35, 
     },
-    tag_container:{
-        backgroundColor: colors.purpleBackground, padding: 5, width: 140,
-                    alignContent: 'center', alignItems: 'center', borderRadius: 10, marginVertical: 10
+    tag_container: {
+        backgroundColor: colors.purpleBackground, padding: 5,
+         width: verticalScale (Platform.OS=='ios'? 123:135),
+        alignContent: 'center', alignItems: 'center', borderRadius: 10, marginVertical: 10
     },
-    tag_txt:{
+    tag_txt: {
         fontFamily: fonts.MontserratMedium, fontFamily: fonts.MontserratRegular
     },
-    cell_details_container:{
+    cell_details_container: {
         marginVertical: 5
     },
-    cell_title_txt:{
+    cell_title_txt: {
         color: colors.black, fontFamily: fonts.MontserratSemiBold,
-                        fontSize: fontSizes.extraSmall, lineHeight: 20
+        fontSize: fontSizes.extraSmall, lineHeight: 20
     },
-    cell_des_txt:{
+    cell_des_txt: {
         color: colors.thinTxt, fontFamily: fonts.MontserratRegular,
-                        fontSize: fontSizes.extraSmall, lineHeight: 20,marginTop:5
+        fontSize: fontSizes.extraSmall, lineHeight: 20, marginTop: 5
     },
-    you_like_container:{
+    you_like_container: {
         flexDirection: 'row', alignContent: 'center', alignItems: 'center'
     },
-    you_like_txt:{
+    you_like_txt: {
         color: colors.black, fontFamily: fonts.MontserratSemiBold,
-                         fontSize: fontSizes.extraExtraSmall ,flex:1
+        fontSize: fontSizes.extraExtraSmall, flex: 1
     }
 })
 export default Feed

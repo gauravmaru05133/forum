@@ -1,4 +1,4 @@
-import {} from "react";
+import { } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import fonts from "../../assets/fonts";
 import images from "../../assets/images";
@@ -15,31 +15,37 @@ const Header = ({
   notificationIcon,
   profileIcon,
   isInnerScreen,
-  onPress
+  onPress,
+  isLocationShow,
+  profileIconOutline
 }) => {
   return (
     <View style={[styles({ isInnerScreen }).mainContainer, container]}>
-      {isInnerScreen && (
-        <TouchableOpacity
-        onPress={isInnerScreen  }
-        >
-<SVGComponent id={"left_arrow"} iconColor={colors.black} />
-        </TouchableOpacity>
-        
+      {isShowAppIcon && (
+        <Image
+          style={{ width: 23, height: 23, marginLeft: 3 }}
+          source={images.appLogo}
+          resizeMode="contain"
+        />
       )}
-      <View style={{ flex: 1 }}>
-        {isShowAppIcon && (
-          <Image
-            style={{ width: 93, height: 28 }}
-            source={images.appIcon}
-            resizeMode="contain"
-          />
-        )}
-        {heading && <CommonText text={heading} style={styles().headingTxt} />}
-      </View>
 
-      {searchIcon && <SVGComponent id={"1.1"} iconColor={colors.black} />}
-      {notificationIcon && <SVGComponent id={"1.2"} iconColor={colors.black} />}
+      {isInnerScreen && (
+        <SVGComponent id={"chevron_left"} iconColor={colors.black} />
+      )}
+
+      {isLocationShow && (
+        <View style={{ marginLeft: 10, flex: 1 }}>
+          {heading && <CommonText text={heading} style={styles().headingTxt} />}
+          <CommonText text={"Bengaluru"} style={[styles().headingTxt, { fontFamily: fonts.MontserratRegular }]} />
+        </View>
+      )}
+
+      {searchIcon && <SVGComponent id={"search"} iconColor={colors.black} />}
+      {notificationIcon && <SVGComponent id={"bell"} iconColor={colors.black} />}
+      {profileIconOutline && (
+        <SVGComponent id={"profile_outline"} iconColor={colors.black}
+        />
+      )}
       {profileIcon && (
         <TouchableOpacity onPress={onPress}>
           <Image
@@ -65,8 +71,8 @@ const styles = (props = {}) =>
     },
     headingTxt: {
       color: colors.black,
-      fontSize: fontSizes.extraLarge,
-      fontFamily: fonts.TFArrowBold,
+      fontSize: fontSizes.extraSmall,
+      fontFamily: fonts.MontserratBold,
     },
     profileIcon: {
       width: 25,

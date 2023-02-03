@@ -2,7 +2,7 @@ export const PARENT_URL = {
     // live
 
     //stage
-     PARENT_URL: 'https://aura-apis-stage.frt.one/',
+     PARENT_URL: 'https://asgard-web-apis-stage.frt.one/',
     
 }
 //trace/api/v1/get_detailed_productivity_chart?session=cac64e89b48f409d938b9f877117f62a&org_id=28&start_date=2022-11-18&end_date=2022-11-18&slug=employee&tag_serial=01C618C8DC4338
@@ -53,8 +53,6 @@ export const URLCollection = {
     LOGIN: BASE_URL.BASE_URL + 'user/login',
     TEAM_INFO: BASE_URL.BASE_URL_SEC + 'get_team_info?',
     LOGOUT: BASE_URL.BASE_URL + 'user/logout',
-    EMPLOYEE_DETAILS: BASE_URL.BASE_URL_SEC + 'get_productivity_detailed_overview?',
-    EMPLOYEE_DETAILS_PIE: BASE_URL.BASE_URL_SEC + 'get_detailed_productivity_chart?',
-    NOTIFICATION_LIST: BASE_URL.BASE_URL_SEC + 'alerts/get_notifications?',
-    READ_NOTIFICATION: BASE_URL.BASE_URL_SEC + 'alerts/notification_status',
+    GET_HOME_SCREEN: BASE_URL.BASE_URL+'customers/home/full'
+
 }

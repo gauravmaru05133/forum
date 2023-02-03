@@ -11,6 +11,9 @@ export const API = {
     login: (onResponse, data) => {
         request(onResponse, data, API_METHOD.POST, URLCollection.LOGIN)
     },
+    getHomeScreen: (onResponse, data) => {
+        request(onResponse, data, API_METHOD.GET, URLCollection.GET_HOME_SCREEN)
+    },
     getTeamInfo: (onResponse, data) => {
         request(onResponse, data, API_METHOD.GET, URLCollection.TEAM_INFO + data)
     },
@@ -39,9 +42,18 @@ export const isInternetCheck = () => {
 
 
 const request = async (onResponse, data, type, url, requestFormate) => {
-    let appHeaders = {}
+    let appHeaders = {
+        'Content-Type': HEADER_KEYS.CONTENT_TYPE_JSON,
+        'mallId': "mall_1",
+        'Authorization': 'Bearer '+Constant.accessToken
+    }
 
-    if (type == API_METHOD.GET) {
+    if (Constant.accessToken != undefined) {
+        //appHeaders.Authorization=Constant.accessToken
+
+    }
+
+    /*if (type == API_METHOD.GET) {
         if (Constant.accessToken != undefined) {
             console.log("globals.userToken", Constant.accessToken)
             appHeaders = {
@@ -73,10 +85,22 @@ const request = async (onResponse, data, type, url, requestFormate) => {
                 'Authorization': 'Bearer ' + Constant.accessToken
             }
         }
-    }
+    }*/
 
-    let apiconfig = {};
-    if (API_METHOD.GET == type) {
+    let apiconfig = {
+        method: type,
+        url: url,
+        headers: appHeaders,
+        timeout: BASE_URL.API_TIME_OUT,
+        timeoutErrorMessage: strings.api_timeout,
+        data:data
+    };
+    if (API_METHOD.POST == type) {
+        //  apiconfig.data = data
+    } else {
+
+    }
+    /*if (API_METHOD.GET == type) {
         apiconfig = {
             method: type,
             url: url,
@@ -111,7 +135,7 @@ const request = async (onResponse, data, type, url, requestFormate) => {
             timeoutErrorMessage: strings.api_timeout,
             data: data
         }
-    }
+    }*/
 
     console.log("header_value :ELSE::", appHeaders)
     console.log("featureURL >>> " + url);
@@ -121,9 +145,9 @@ const request = async (onResponse, data, type, url, requestFormate) => {
 
     await axios(apiconfig).then((response) => {
         console.log("API_RESPONSE :: -> ", url, " = ", JSON.stringify(data), " = ", response)
-        
+
         if (response.data) {
-            console.log("api_res>",response.data)
+            console.log("api_res>", response.data)
             if (response.data?.status?.code == BASE_URL.SUCCESS) {
                 onResponse.success(response.data?.data)
 

@@ -3,8 +3,10 @@ import { StyleSheet, Text } from "react-native";
 import colors from "../../utils/colors";
 import { montserratFont, fontSizes } from "../../utils/variables";
 
-const CommonText = ({ text, children, style }) => {
-  return <Text style={[styles.text, style]}>{text || children}</Text>;
+const CommonText = ({ text, children, style,numberOfLines }) => {
+  return <Text style={[styles.text, style]}
+  numberOfLines={numberOfLines?numberOfLines:1}
+  >{text || children}</Text>;
 };
 
 const styles = StyleSheet.create({

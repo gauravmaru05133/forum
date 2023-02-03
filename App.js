@@ -8,7 +8,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import FlashMessage from "react-native-flash-message";
 import SnackContext from "./src/utils/Context/SnackbarContext";
-import CommonModal from "./src/componets/Modal/CommonModal";
 
 const App = () => {
 
