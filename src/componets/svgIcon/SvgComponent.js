@@ -76,7 +76,7 @@ const SvgComponent = ({
         viewBoxMain = "395 90 40 40"
     } else if (id == '2.13') {
         viewBoxMain = "430 90 40 40"
-    } else if (id == '2.14') {
+    } else if (id == 'heart_outline') {
         viewBoxMain = "463 90 40 40"
     } else if (id == '2.15') {
         viewBoxMain = "493 90 40 40"
@@ -114,9 +114,8 @@ const SvgComponent = ({
         viewBoxMain = "497 125 40 40"
     } else if (id == '3.15') {
         viewBoxMain = "531 125 40 40"
-        '  '
     }
-    else if (id == '4.1') {
+    else if (id == 'close') {
         viewBoxMain = "56 157 40 40"
     } else if (id == '4.2') {
         viewBoxMain = "89 157 40 40"
@@ -163,6 +162,10 @@ const SvgComponent = ({
 
     else if (id == 'left_arrow') {
         viewBoxMain = "89 294 40 40"
+    }
+
+    else if (id == 'play_outline') {
+        viewBoxMain = "293 226 40 40"
     }
 
     const iconColorM = iconColor ? iconColor : colors.black
@@ -455,7 +458,7 @@ const SvgComponent = ({
                 />
                 <Path
                     d="M76 176.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95 1.414-1.414 4.95 4.95z"
-                    fill="#000"
+                    fill={iconColorM}
                 />
                 <G id="url(#clip26_4645_58863)">
                     <Path
@@ -470,7 +473,7 @@ const SvgComponent = ({
                 <Path d="M171 174.07V186h14v-11.93l-7-4.666-7 4.666z" fill={iconColorM} />
                 <Path
                     d="M174 182h8v2h-8v-2zm0-3h8v2h-8v-2zm4-2a2 2 0 11.001-4.001A2 2 0 01178 177z"
-                    fill="#fff"
+                    fill={iconColorM}
                 />
                 <G id="url(#clip27_4645_58863)">
                     <Path

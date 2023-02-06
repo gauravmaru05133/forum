@@ -5,18 +5,20 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { State } from "react-native-gesture-handler";
 import TabIndexReducer from "./reducers/TabIndexReducer";
 import AppConstantReducer from "./reducers/AppConstant";
+import ScreenNameReducer from "./reducers/ScreenName";
 
 const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
     stateReconciler: autoMergeLevel2,
     whitelist: [''], // save
-    blacklist: ['tabIndexReducer','appConstantReducer'] //Temporary 
+    blacklist: ['tabIndexReducer','appConstantReducer','screenNameReducer'] //Temporary 
 }
 
 const rootReducer = combineReducers({
     tabIndexReducer:TabIndexReducer,
-    appConstantReducer:AppConstantReducer
+    appConstantReducer:AppConstantReducer,
+    screenNameReducer:ScreenNameReducer
 });
 
 

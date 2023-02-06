@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import fonts from "../../assets/fonts";
 import SvgComponent from "../../componets/svgIcon/SvgComponent";
 import TabCell from "../../componets/tabCell";
+import Constant from "../../constant";
 import colors from "../../utils/colors";
 import Bottom from "../../utils/json/bottom.json";
 import { navigationToScreen } from "../../utils/navigations";
@@ -21,10 +22,24 @@ import { deviceWidth, fontSizes } from "../../utils/variables";
 const Tabbar = ({ state, descriptors, navigation }) => {
   const [tab, setTab] = useState(0);
   const [footer, setFooter] = useState([]);
+  const [tabBarShow, setTabBarShow] = useState(true)
+  const screenNameState = useSelector((state) => state.screenNameReducer.screenName);
+
 
   useEffect(() => {
     setFooter(Bottom);
   }, []);
+
+  useEffect(() => {
+    console.log("kkkkkkkkkkkkkkkk 1111", screenName)
+    if (screenNameState == screenName.FEED_MEDIA_DETAILS) {
+      setTabBarShow(false)
+      console.log("kkkkkkkkkkkkkkkk ", screenNameState)
+    } else {
+      setTabBarShow(true)
+    }
+
+  }, [screenNameState])
 
   const goToScreen = (index) => {
     switch (index) {
@@ -40,7 +55,9 @@ const Tabbar = ({ state, descriptors, navigation }) => {
   };
 
   return (
-    <View style={styles().container}>
+    <View style={styles({
+      tabBarShow
+    }).container}>
       {footer.map((item, index) => {
         return (
           <TouchableOpacity
@@ -79,6 +96,7 @@ const styles = (props = {}) =>
       justifyContent: "space-evenly",
       flexDirection: "row",
       alignItems: "center",
+      display: props?.tabBarShow ? 'flex' : 'none'
     },
     childContainer: {
       justifyContent: "center",
@@ -86,6 +104,7 @@ const styles = (props = {}) =>
       alignItems: "center",
       marginBottom: 10,
       flex: 1,
+
     },
     tabTxt: {
       fontFamily:

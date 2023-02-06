@@ -1,7 +1,9 @@
 import Constant from "../constant";
+import { useRoute } from '@react-navigation/native';
 
 //navigate to screen
 export const navigationToScreen = (screenName,props)=>{
+    Constant.screenName = screenName
     if(props!=undefined){
         Constant.navigation.navigate(screenName,props)
     }else{

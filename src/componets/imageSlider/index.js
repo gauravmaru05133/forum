@@ -114,8 +114,9 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isDetailsEnable, da
         activeDotWidth={20}
         passiveDotHeight={2}
         activeDotHeight={2}
-        length={data.length}
+        length={data?.length}
         active={activeSlide}
+        paddingHorizontal={1}
         />
         {/* <FlatList
           ref={flatlistIndicatorRef}

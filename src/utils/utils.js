@@ -1,6 +1,6 @@
 import { Dimensions } from "react-native";
 import { showMessage } from "react-native-flash-message";
-import { NUMBER_REGX } from "./variables"
+import { mediaTypes, MEDIA_TYPE_INDEX, NUMBER_REGX } from "./variables"
 
 const sizeDenominator = 850;
 
@@ -55,4 +55,14 @@ export const showFlashMessage = (type, msg) => {
         message: msg,
         type: type ? type : 'default'
     })
+}
+
+
+// return media type
+export const isMediaType = (typeP)=>{
+    if(mediaTypes.images.includes(typeP)){
+        return MEDIA_TYPE_INDEX.IMAGE
+    }else{
+        return MEDIA_TYPE_INDEX.VIDEO
+    }
 }

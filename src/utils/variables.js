@@ -84,7 +84,9 @@ export const dateOrTimeFormate = {
     yyyy_mm_dd: 'YYYY-MM-DD',
     yyyy_mm_dd_hh_mm_a: 'YYYY-MM-DD hh:mm a',
     hh_mm_a: 'hh:mm a',
-    hh_mm: "HH:mm"
+    hh_mm: "HH:mm",
+    hh_mm_ss:'hh:mm:ss',
+    DO_MM_YYYY:'Do MMM, YYYY'
 }
 
 // date time picker mode
@@ -102,4 +104,17 @@ export const flashMsgType={
   none:'none',
   success:'success',
   warning:'warning'
+}
+
+
+// media type list 
+export const mediaTypes = {
+  video:'video/mp4',
+  images:['image/jpeg','image/png'],
+}
+
+//media type index
+export const MEDIA_TYPE_INDEX = {
+  IMAGE:1,
+  VIDEO:2
 }

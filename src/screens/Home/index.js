@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import FeaturedProducts from "../../componets/featureProducts";
 import Header from "../../componets/header/Header";
-import HeaderTxt from "../../componets/headingTxt";
 import ImageSlider from "../../componets/imageSlider";
 import Constant from "../../constant";
 import fetureProducts from "../../utils/json/featureProducts";
@@ -91,11 +90,20 @@ const Home = ({ navigation }) => {
     />
   }
 
+//switch to feed media details
+  const feedMediaDetailClick = (item)=>{
+    navigationToScreen(screenName.FEED_MEDIA_DETAILS,{
+      item:item
+    })
+  }
+
+
   //render feed UI
   const renderFeedUI = ({ item, index }) => {
     return <Feed
       item={item}
       index={index}
+      feedMediaClick = {()=>feedMediaDetailClick(item)}
     />
   }
 
@@ -114,7 +122,7 @@ const Home = ({ navigation }) => {
           <View style={{ flex: 1 }}>
 
             {/* /
-                bottom banner 
+                Top banner 
               / */}
             <ImageSlider
               data={homeScreenInfo?.banners}
@@ -136,8 +144,7 @@ const Home = ({ navigation }) => {
               {/* /
                 coupan banner UI
               / */}
-
-              {homeScreenInfo?.coupons.lenght > 0 && (
+              {homeScreenInfo?.coupons?.length > 0 && (
                 <View>
                   <CommonText
                     text={strings.coupon_for_you}
@@ -195,7 +202,7 @@ const Home = ({ navigation }) => {
             {/* /
                 rewards UI
               / */}
-            {homeScreenInfo?.rewards.lenght > 0 && (
+            {homeScreenInfo?.rewards?.length > 0 && (
               <View style={styles.reward_for_you_container}>
                 <CommonText
                   text={strings.reward_for_you}
@@ -222,7 +229,7 @@ const Home = ({ navigation }) => {
             {/* /
                 bottom banner 
               / */}
-            {homeScreenInfo?.homeBottom.length > 0 && (
+            {homeScreenInfo?.homeBottom?.length > 0 && (
               <ImageSlider
                 data={homeScreenInfo?.homeBottom}
                 isDetailsEnable={false}

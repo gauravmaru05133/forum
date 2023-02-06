@@ -11,17 +11,20 @@ import fonts from "../../assets/fonts";
 import images from "../../assets/images";
 import AppImage from "../../componets/image/AppImage";
 import { Divider } from "react-native-paper";
-import {  scale,verticalScale,moderateScale} from "react-native-size-matters";
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { scale, verticalScale, moderateScale } from "react-native-size-matters";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { removeHtmTag } from "../../utils/utils";
+import ReadMore from "@fawazahmed/react-native-read-more";
+import Media from "./Media";
 
-const Feed = ({ item, index }) => {
+
+const Feed = ({ item, index,feedMediaClick }) => {
     return (
         <View style={styles.cell_container}>
             <View style={styles.brand_cell_container}>
                 <AppImage
                     style={{ width: 40, height: 40 }}
-                    source={{uri:item?.retailerDetails?.retailerLogo}}
+                    source={{ uri: item?.retailerDetails?.retailerLogo }}
                 />
                 <View style={{ flex: 1, marginLeft: 10 }}>
                     <CommonText
@@ -49,14 +52,18 @@ const Feed = ({ item, index }) => {
 
                 </View>
             </View>
-            {item.media.length>0 && (
-                <View style={styles.brand_cell_img}>
-                    <AppImage
-                        style={{ width: undefined, height: undefined, flex: 1 }}
-                        source={{uri:item.media[0].thumbnailUrl}}
-                        resizeMode={imageResize.cover}
-                    />
-                </View>
+            {item.media.length > 0 && (
+                <Media
+                    item={item.media}
+                    feedMediaClick={feedMediaClick}
+                />
+                // <View style={styles.brand_cell_img}>
+                //     <AppImage
+                //         style={{ width: undefined, height: undefined, flex: 1 }}
+                //         source={{uri:item.media[0].thumbnailUrl}}
+                //         resizeMode={imageResize.cover}
+                //     />
+                // </View>
             )}
             {item.tag && (
                 <View style={styles.tag_container}>
@@ -71,10 +78,23 @@ const Feed = ({ item, index }) => {
                     text={removeHtmTag(item.title)}
                     style={styles.cell_title_txt}
                 />
-                <CommonText
+                <ReadMore
+                    numberOfLines={2}
+                    seeMoreText='Read More'
+                    seeLessText="Read Less"
+                    style={styles.cell_des_txt}
+                    seeMoreStyle={styles.readMoreLessTxtStyle}
+                    seeLessStyle={styles.readMoreLessTxtStyle}
+                >
+                    {
+                        removeHtmTag(item.description)
+                    }
+                </ReadMore>
+                {/* <CommonText
                     text={removeHtmTag(item.description) }
                     style={styles.cell_des_txt}
-                />
+                    numberOfLines={3}
+                /> */}
             </View>
 
             <Divider />
@@ -107,11 +127,11 @@ const styles = StyleSheet.create({
         width: '100%', height: 50, flexDirection: 'row'
     },
     brand_cell_img: {
-        width: '100%', height: deviceHeight * 0.35, 
+        width: '100%', height: deviceHeight * 0.35,
     },
     tag_container: {
         backgroundColor: colors.purpleBackground, padding: 5,
-         width: verticalScale (Platform.OS=='ios'? 123:135),
+        width: verticalScale(Platform.OS == 'ios' ? 123 : 135),
         alignContent: 'center', alignItems: 'center', borderRadius: 10, marginVertical: 10
     },
     tag_txt: {
@@ -134,6 +154,9 @@ const styles = StyleSheet.create({
     you_like_txt: {
         color: colors.black, fontFamily: fonts.MontserratSemiBold,
         fontSize: fontSizes.extraExtraSmall, flex: 1
+    },
+    readMoreLessTxtStyle: {
+        textDecorationLine: 'underline', color: colors.readMoreLessColor, marginLeft: 5
     }
 })
 export default Feed

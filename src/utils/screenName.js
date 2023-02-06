@@ -18,5 +18,6 @@ const screenName = {
     DELETEACCOUNT: "Delete Account",
     SUBMITDELETE: "Submit Delete",
     DELETESUCCESSFUL: "Delete Successful",
+    FEED_MEDIA_DETAILS:'FeedMediaDetails',
 }
 export default screenName;

@@ -62,7 +62,7 @@ const styles = (props = {}) =>
   StyleSheet.create({
     mainContainer: {
       width: deviceWidth,
-      height: 60,
+      height: 75,
       justifyContent: "center",
       flexDirection: "row",
       alignContent: "center",
