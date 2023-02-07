@@ -66,7 +66,7 @@ const SvgComponent = ({
         viewBoxMain = "260 90 40 40"
     } else if (id == '2.7') {
         viewBoxMain = "325 90 40 40"
-    } else if (id == '2.8') {
+    } else if (id == 'filter') {
         viewBoxMain = "292 90 40 40"
     } else if (id == '2.9') {
         viewBoxMain = "326 90 40 40"
@@ -166,6 +166,14 @@ const SvgComponent = ({
 
     else if (id == 'play_outline') {
         viewBoxMain = "293 226 40 40"
+    }
+
+    else if (id == 'play_round_outline') {
+        viewBoxMain = "192 260 40 40"
+    }
+
+    else if (id == 'pause_outline') {
+        viewBoxMain = "226 260 40 40"
     }
 
     const iconColorM = iconColor ? iconColor : colors.black

@@ -66,3 +66,20 @@ export const isMediaType = (typeP)=>{
         return MEDIA_TYPE_INDEX.VIDEO
     }
 }
+
+// add zero
+const addZeros = (time) => {
+    return (time < 10) ? (`0${time}`) : time
+}
+
+export const convertSecondToHHMMSS = (sec)=>{
+    let ncurrentTime = Number(sec);
+    var h = Math.floor(ncurrentTime / 3600);
+    var m = Math.floor(ncurrentTime % 3600 / 60);
+    var s = Math.floor(ncurrentTime % 3600 % 60);
+
+    var hDisplay = h > 0 ? h : "0";
+    var mDisplay = m > 0 ? m : "0";
+    var sDisplay = s > 0 ? s : "0";
+    return `${addZeros(hDisplay)}:${addZeros(mDisplay)}:${addZeros(sDisplay)}`
+}

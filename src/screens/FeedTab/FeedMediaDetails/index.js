@@ -5,24 +5,24 @@ import {
     TouchableOpacity,
     ScrollView,
 } from "react-native";
-import { dateOrTimeFormate, deviceHeight, deviceWidth, fontSizes, imageResize } from "../../utils/variables";
-import SvgComponent from "../../componets/svgIcon/SvgComponent";
-import CommonText from "../../componets/commonText";
-import colors from "../../utils/colors";
-import fonts from "../../assets/fonts";
-import images from "../../assets/images";
-import AppImage from "../../componets/image/AppImage";
+import { dateOrTimeFormate, deviceHeight, deviceWidth, fontSizes, imageResize, mediaTypes, MEDIA_TYPE_INDEX } from "../../../utils/variables";
+import SvgComponent from "../../../componets/svgIcon/SvgComponent";
+import CommonText from "../../../componets/commonText";
+import colors from "../../../utils/colors";
+import fonts from "../../../assets/fonts";
+import images from "../../../assets/images";
+import AppImage from "../../../componets/image/AppImage";
 import { Divider } from "react-native-paper";
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import { removeHtmTag } from "../../utils/utils";
+import { isMediaType, removeHtmTag } from "../../../utils/utils";
 import ReadMore from "@fawazahmed/react-native-read-more";
-import appStyles from "../../utils/commonStyle";
+import appStyles from "../../../utils/commonStyle";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import { goBackScreen, navigationToScreen } from "../../utils/navigations";
-import Media from "../../componets/Feed/Media";
-import screenName from "../../utils/screenName";
+import { goBackScreen, navigationToScreen } from "../../../utils/navigations";
+import Media from "../../../componets/Feed/Media";
+import screenName from "../../../utils/screenName";
 
 const FeedMediaDetails = ({ route }) => {
     const [item, setItem] = useState(route?.params?.item)
@@ -34,8 +34,12 @@ const FeedMediaDetails = ({ route }) => {
     }, [])
 
     const feedMediaClick = (item)=>{
-        console.log("llllllllll",item)
-        //navigationToScreen(screenName,item)
+        let isFindMediaType = isMediaType(item?.mediaType)
+        if (isFindMediaType== MEDIA_TYPE_INDEX.VIDEO) {
+            navigationToScreen(screenName.VIDEO_PLAYER,{
+                item:item
+            })    
+        } 
     }
 
     return (
@@ -53,20 +57,21 @@ const FeedMediaDetails = ({ route }) => {
                     </TouchableOpacity>
 
                 </View>
-                <View style={{ flex: 1, }}>
+                <View style={{ flex: 1,marginTop:20 }}>
                     {item.media.length > 0 && (
                         <Media
                             item={item.media}
-                            container={{ width: '100%', height: '100%' }}
+                            container={{ width: '100%', height: '70%' }}
                             feedMediaClick={feedMediaClick}
                         />
                     )}
                 </View>
-                <View style={{ width: deviceWidth, height: deviceHeight * 0.2 }} />
+                <View style={{ width: deviceWidth, height: deviceHeight * 0.1 }} />
                 <View style={{
                     width: deviceWidth,
-                    alignSelf: 'center', paddingTop: 10, maxHeight: deviceHeight * 0.5, position: 'absolute', bottom: 0,
-                    backgroundColor: 'rgba(0,0,0,0.8)', paddingHorizontal: 10, borderTopLeftRadius: 10, borderTopRightRadius: 10
+                    alignSelf: 'center', paddingTop: 10, maxHeight: deviceHeight * 0.6, position: 'absolute', bottom: 0,
+                    backgroundColor: 'rgba(0,0,0,0.8)', paddingHorizontal: 10, 
+                    borderTopLeftRadius: 10, borderTopRightRadius: 10
                 }}>
                     <CommonText
                         text={`${moment(item?.startDate).format(dateOrTimeFormate.DO_MM_YYYY)} at ${moment(item?.startTime, dateOrTimeFormate.hh_mm_ss).format(dateOrTimeFormate.hh_mm_a)}`}
@@ -84,7 +89,7 @@ const FeedMediaDetails = ({ route }) => {
                         contentContainerStyle={{ paddingBottom: isHideTxt ? 10 : 10 }}
                     >
                         <ReadMore
-                            numberOfLines={2}
+                            numberOfLines={4}
                             seeMoreText='Read More'
                             seeLessText="Read Less"
                             style={styles.cell_des_txt}
@@ -94,8 +99,8 @@ const FeedMediaDetails = ({ route }) => {
                             onExpand={() => isShowTxt(true)}
                         >
                             {
-                                // removeHtmTag(item?.description)
-                                removeHtmTag('dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn')
+                                 removeHtmTag(item?.description)
+                                //removeHtmTag('dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn dasdadnanda dsabdaksbdasbdasdasd sadasbdasbdhasbdba daslndaslndasd asdandasndanskdd sadnandsnndasndn')
                             }
                         </ReadMore>
                     </ScrollView>

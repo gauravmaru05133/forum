@@ -19,5 +19,7 @@ const screenName = {
     SUBMITDELETE: "Submit Delete",
     DELETESUCCESSFUL: "Delete Successful",
     FEED_MEDIA_DETAILS:'FeedMediaDetails',
+    VIDEO_PLAYER:'VideoPlayer',
+    FEED_TAB:'FeedTab',
 }
 export default screenName;

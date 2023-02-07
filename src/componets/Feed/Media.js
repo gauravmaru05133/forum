@@ -32,7 +32,7 @@ const Media = ({
                         <AppImage
                             style={{ width: undefined, height: undefined, flex: 1 }}
                             source={{ uri: mItem?.thumbnailUrl ? mItem?.thumbnailUrl : mItem?.mediaUrl }}
-                            resizeMode={imageResize.contain}
+                            resizeMode={imageResize.cover}
                         /> :
                         <Video
                             style={{ width: undefined, height: undefined, flex: 1 }}

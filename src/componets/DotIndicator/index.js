@@ -42,7 +42,7 @@ export default class DotIndicator extends Component {
   static defaultProps = {
     width: 300,
 
-    marginHorizontal: 2,
+    marginHorizontal: -1,
     paddingVertical: 10,
     paddingHorizontal: 10,
 

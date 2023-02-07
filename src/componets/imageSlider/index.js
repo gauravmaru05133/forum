@@ -109,14 +109,14 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isDetailsEnable, da
         />
       </View>
       <View style={styles().indicatorContainer}>
-        <DotIndicator 
-        passiveDotWidth={20}
-        activeDotWidth={20}
-        passiveDotHeight={2}
-        activeDotHeight={2}
-        length={data?.length}
-        active={activeSlide}
-        paddingHorizontal={1}
+        <DotIndicator
+          passiveDotWidth={20}
+          activeDotWidth={20}
+          passiveDotHeight={2}
+          activeDotHeight={3}
+          length={data?.length}
+          active={activeSlide}
+          
         />
         {/* <FlatList
           ref={flatlistIndicatorRef}

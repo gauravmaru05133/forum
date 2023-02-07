@@ -17,8 +17,6 @@ import { deviceHeight, deviceWidth, fontSizes, imageResize } from "../../utils/v
 import { navigationToScreen } from "../../utils/navigations";
 import screenName from "../../utils/screenName";
 import SvgComponent from "../../componets/svgIcon/SvgComponent";
-import foodImageCatSlider from "../../utils/json/imageSlider.json";
-import ElevatedView from "../../componets/ElevatedView";
 import CommonText from "../../componets/commonText";
 import colors from "../../utils/colors";
 import fonts from "../../assets/fonts";
@@ -36,35 +34,50 @@ import { API } from "../../network/API";
 import Loader from "../../componets/Loader";
 
 const paddingHorizontal = 20
-const Home = ({ navigation }) => {
+
+const FeedTab = ({ navigation }) => {
   const [couponsList, setCoupons] = useState([])
   const [homeScreenInfo, setHomeScreenInfo] = useState('')
   const [loading, setLoading] = useState(true)
-  const [feedList,setFeedList] = useState([])
-
+  const [feedList, setFeedList] = useState([])
+  const [feedTags, setFeedTags] = useState([])
 
   useEffect(() => {
     Constant.navigation = navigation;
     setLoading(true)
-    fetchHomeScreenInfo()
+    fetchFeedTabApi()
   }, []);
 
   //fetch home screen details
-  const fetchHomeScreenInfo = () => {
+  const fetchFeedTabApi = () => {
     API.getHomeScreen(homeScreenRes, '')
+    API.getNewsFeeds(newsFeedListRes, '')
   }
 
+  // home screen info
   const homeScreenRes = {
     success: (res) => {
       console.log("home_Screen_res,", res)
       setHomeScreenInfo(res)
-      if (res?.newsFeeds && res?.newsFeeds.length>0) {
-          let newsFeeds = res?.newsFeeds.slice(0,4)
-          console.log("feed_lengths >>",newsFeeds.length)
-          setFeedList(newsFeeds)
-      } else {
-        
+      setLoading(false)
+    },
+    error: (err) => {
+      console.log("home_Screen_error,", err)
+      setHomeScreenInfo('')
+      setLoading(false)
+    }
+  }
+
+  // newsfeed tab api response
+  const newsFeedListRes = {
+    success: (res) => {
+      console.log("home_Screen_res,", res)
+      if (res?.newsFeedList && res?.newsFeedList.length > 0) {
+        //let newsFeeds = res?.newsFeedList.slice(0, 6)
+        //console.log("feed_lengths >>", newsFeeds.length)
+        setFeedList(res?.newsFeedList)
       }
+      setFeedTags(res?.tagList)
       setLoading(false)
     },
     error: (err) => {
@@ -96,10 +109,10 @@ const Home = ({ navigation }) => {
     />
   }
 
-//switch to feed media details
-  const feedMediaDetailClick = (item)=>{
-    navigationToScreen(screenName.FEED_MEDIA_DETAILS,{
-      item:item
+  //switch to feed media details
+  const feedMediaDetailClick = (item) => {
+    navigationToScreen(screenName.FEED_MEDIA_DETAILS, {
+      item: item
     })
   }
 
@@ -109,9 +122,28 @@ const Home = ({ navigation }) => {
     return <Feed
       item={item}
       index={index}
-      feedMediaClick = {()=>feedMediaDetailClick(item)}
+      feedMediaClick={() => feedMediaDetailClick(item)}
     />
   }
+
+  // render feed tags
+  const renderFeedTags = ({ item, index }) => {
+    return (
+      <TouchableOpacity style={{
+        marginHorizontal: 5,
+        borderColor: colors.txt_color, borderWidth: 1, paddingHorizontal: 10, justifyContent: 'center', alignContent: 'center', alignItems: 'center',
+      }}>
+        <CommonText
+          text={item.tagName}
+          style={{
+            color: colors.txt_color, fontFamily: fonts.MontserratRegular,
+            fonSize: fontSizes.extraSmall
+          }}
+        />
+      </TouchableOpacity>
+    )
+  }
+
 
   return (
     <View style={appStyles.container}>
@@ -134,123 +166,34 @@ const Home = ({ navigation }) => {
               data={homeScreenInfo?.banners}
               isDetailsEnable={false}
             />
-            <View style={styles.coupon_for_u_container}>
-              <ElevatedView style={styles.search_elevation}>
+
+            {
+              /**
+               * Feed tags
+               */
+            }
+            <View style={{ width: '100%', paddingHorizontal: paddingHorizontal, 
+            flexDirection: 'row' ,marginTop:30}}>
+              <TouchableOpacity>
                 <SvgComponent
-                  id='search'
-                  width={40}
-                  height={40}
+                  id='filter'
                 />
-                <CommonText
-                  style={styles.search_txt_style}
-                  text={strings.which_store_u_looking_for}
-                />
-              </ElevatedView>
-
-              {/* /
-                coupan banner UI
-              / */}
-              {homeScreenInfo?.coupons?.length > 0 && (
-                <View>
-                  <CommonText
-                    text={strings.coupon_for_you}
-                    style={appStyles.heading_txt}
-                  />
-                  <CommonText
-                    text={strings.make_shopping_enjoyable}
-                    style={appStyles.thin_sec_title}
-                  />
-                  <FlatList
-                    data={homeScreenInfo?.coupons}
-                    renderItem={renderFeatureProducts}
-                    style={{ paddingVertical: 20 }}
-                    keyExtractor={(item, index) => index.toString()}
-                    showsVerticalScrollIndicator={false}
-                    showsHorizontalScrollIndicator={false}
-                  />
-
-                  <ExploreMore
-                    title={strings.explore_more_coupon}
-                  />
-                </View>
-              )}
-            </View>
-
-            {/* /
-                static banner 
-              / */}
-            <View style={styles.banner_main_container}>
-              <View style={styles.banner_child_white_container}>
-                <View style={{ flex: 1 }}>
-                  <AppImage
-                    style={{ width: undefined, height: undefined, flex: 1 }}
-                    source={images.brandBanner}
-                    resizeMode={imageResize.cover}
-                  />
-                </View>
-                <View style={styles.banner_info_title_container}>
-                  <CommonText
-                    text={strings.feature_brands_at_forum}
-                    style={appStyles.heading_txt}
-                  />
-                  <CommonText
-                    text={strings.delightful_reward_together}
-                    style={appStyles.thin_sec_title}
-                  />
-                  <AppButton
-                    title={strings.view_all}
-                  />
-                </View>
-              </View>
-            </View>
-
-
-            {/* /
-                rewards UI
-              / */}
-            {homeScreenInfo?.rewards?.length > 0 && (
-              <View style={styles.reward_for_you_container}>
-                <CommonText
-                  text={strings.reward_for_you}
-                  style={appStyles.heading_txt}
-                />
-                <CommonText
-                  text={strings.delightful_reward_together}
-                  style={appStyles.thin_sec_title}
-                />
-                <FlatList
-                  data={homeScreenInfo?.rewards}
-                  renderItem={renderFeatureProducts}
-                  style={{ paddingVertical: 20 }}
-                  keyExtractor={(item, index) => index.toString()}
-                  showsVerticalScrollIndicator={false}
-                  showsHorizontalScrollIndicator={false}
-                />
-                <ExploreMore
-                  title={strings.explore_more_rewards}
-                />
-              </View>
-            )}
-
-            {/* /
-                bottom banner 
-              / */}
-            {homeScreenInfo?.homeBottom?.length > 0 && (
-              <ImageSlider
-                data={homeScreenInfo?.homeBottom}
-                isDetailsEnable={false}
+              </TouchableOpacity>
+              <FlatList
+                data={feedTags}
+                renderItem={renderFeedTags}
+                horizontal
+                keyExtractor={(item, index) => index.toString()}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
               />
-            )}
 
+            </View>
 
             {/* /
                 stay updated UI
               / */}
             <View style={styles.stay_updated_container}>
-              <CommonText
-                text={strings.stay_updated}
-                style={appStyles.heading_txt}
-              />
               <View style={styles.stay_updated_list}>
                 <FlatList
                   data={feedList}
@@ -300,7 +243,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: paddingHorizontal, paddingBottom: 30
   },
   stay_updated_container: {
-    paddingHorizontal: paddingHorizontal, paddingBottom: 30, marginTop: 30
+    paddingHorizontal: paddingHorizontal, paddingBottom: 30, marginTop: 20
   },
   search_elevation: {
     width: '100%', height: 50, flexDirection: 'row',
@@ -315,4 +258,4 @@ const styles = StyleSheet.create({
   }
 
 });
-export default Home;
+export default FeedTab;

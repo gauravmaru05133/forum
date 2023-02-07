@@ -14,23 +14,8 @@ export const API = {
     getHomeScreen: (onResponse, data) => {
         request(onResponse, data, API_METHOD.GET, URLCollection.GET_HOME_SCREEN)
     },
-    getTeamInfo: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.GET, URLCollection.TEAM_INFO + data)
-    },
-    logout: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.POST, URLCollection.LOGOUT)
-    },
-    employeeInfoDetails: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.GET, URLCollection.EMPLOYEE_DETAILS + data)
-    },
-    fetchPieChartInfo: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.GET, URLCollection.EMPLOYEE_DETAILS_PIE + data)
-    },
-    fetchNotification: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.GET, URLCollection.NOTIFICATION_LIST + data)
-    },
-    readAllNotification: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.POST, URLCollection.READ_NOTIFICATION)
+    getNewsFeeds: (onResponse, data) => {
+        request(onResponse, data, API_METHOD.GET, URLCollection.GET_NEWS_FEED_LIST)
     },
 }
 

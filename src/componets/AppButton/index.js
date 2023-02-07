@@ -3,7 +3,6 @@ import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import colors from "../../utils/colors";
 import { deviceWidth, fontSizes, textTransform } from "../../utils/variables";
 import { Button } from "react-native-paper";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import fonts from "../../assets/fonts";
 import SvgComponent from "../svgIcon/SvgComponent";
 

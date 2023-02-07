@@ -1,10 +1,5 @@
 const appIcon = require('./app_icon.png')
 const dummyProfileIcon = require('./dummy_icon.png')
-const fp1 = require("./fp_1.png")
-const fp2 = require("./fp_2.png")
-const fp3 = require("./fp_3.png")
-const fp4 = require("./fp_4.png")
-const fp5 = require("./fp_5.png")
 const guardIcon = require("./guard_icon.png")
 const offerCard = require("./offer_card.png")
 const wheelIcon = require("./wheel_icon.png")
@@ -28,8 +23,8 @@ const zaraIcon = require("./zara_icon.png");
 const dotImg = require('./dot.png')
 const appLogo = require('./app_logo.png')
 const images = {
-  appIcon, dummyProfileIcon, fp1, fp2, fp3, fp4,
-  fp5, guardIcon, offerCard, wheelIcon, scratchCard, notebookIcon, inviteHumanIcon,
+  appIcon, dummyProfileIcon, 
+  guardIcon, offerCard, wheelIcon, scratchCard, notebookIcon, inviteHumanIcon,
   loyaltyHubTypeContainer, brandLogo1, brandLogo2, dineNdWinIcon,
   appLogoLargeIcon, loginPattern,
   mask_1,brandBanner,coffeeCupImg,

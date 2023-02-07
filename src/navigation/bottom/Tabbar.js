@@ -31,10 +31,8 @@ const Tabbar = ({ state, descriptors, navigation }) => {
   }, []);
 
   useEffect(() => {
-    console.log("kkkkkkkkkkkkkkkk 1111", screenName)
-    if (screenNameState == screenName.FEED_MEDIA_DETAILS) {
+    if (screenNameState == screenName.FEED_MEDIA_DETAILS || screenNameState == screenName.VIDEO_PLAYER) {
       setTabBarShow(false)
-      console.log("kkkkkkkkkkkkkkkk ", screenNameState)
     } else {
       setTabBarShow(true)
     }
@@ -46,8 +44,8 @@ const Tabbar = ({ state, descriptors, navigation }) => {
       case 1:
         navigationToScreen(screenName.HOME);
         break;
-      case 3:
-        navigationToScreen(screenName.OFFERLIST);
+      case 2:
+        navigationToScreen(screenName.FEED_TAB);
         break;
       case 4:
         navigationToScreen(screenName.LOYALTYHUB);
