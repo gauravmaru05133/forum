@@ -54,6 +54,7 @@ export const URLCollection = {
     TEAM_INFO: BASE_URL.BASE_URL_SEC + 'get_team_info?',
     LOGOUT: BASE_URL.BASE_URL + 'user/logout',
     GET_HOME_SCREEN: BASE_URL.BASE_URL+'customers/home/full',
-    GET_NEWS_FEED_LIST:BASE_URL.BASE_URL+'customers/newsfeed/'
+    GET_NEWS_FEED_LIST:BASE_URL.BASE_URL+'customers/newsfeed/',
+    GET_RETAILS:BASE_URL.BASE_URL+'customers/retailers',
 
 }

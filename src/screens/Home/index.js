@@ -40,8 +40,8 @@ const Home = ({ navigation }) => {
   const [couponsList, setCoupons] = useState([])
   const [homeScreenInfo, setHomeScreenInfo] = useState('')
   const [loading, setLoading] = useState(true)
-  const [feedList,setFeedList] = useState([])
-
+  const [feedList, setFeedList] = useState([])
+  const [retailers, setRetailers] = useState([])
 
   useEffect(() => {
     Constant.navigation = navigation;
@@ -51,19 +51,37 @@ const Home = ({ navigation }) => {
 
   //fetch home screen details
   const fetchHomeScreenInfo = () => {
+    API.getRetailers(retailersScreenRes, '')
     API.getHomeScreen(homeScreenRes, '')
+  }
+
+  //retailers api 
+  const retailersScreenRes = {
+    success: (res) => {
+      console.log("home_Screen_res,", res)
+      setHomeScreenInfo(res)
+      if (res?.retailerList && res?.retailerList.length > 0) {
+        let retailers = res?.retailerList.slice(0, 7)
+        setRetailers(retailers)
+      }
+    },
+    error: (err) => {
+      console.log("home_Screen_error,", err)
+      setHomeScreenInfo('')
+      setLoading(false)
+    }
   }
 
   const homeScreenRes = {
     success: (res) => {
       console.log("home_Screen_res,", res)
       setHomeScreenInfo(res)
-      if (res?.newsFeeds && res?.newsFeeds.length>0) {
-          let newsFeeds = res?.newsFeeds.slice(0,4)
-          console.log("feed_lengths >>",newsFeeds.length)
-          setFeedList(newsFeeds)
+      if (res?.newsFeeds && res?.newsFeeds.length > 0) {
+        let newsFeeds = res?.newsFeeds.slice(0, 4)
+        console.log("feed_lengths >>", newsFeeds.length)
+        setFeedList(newsFeeds)
       } else {
-        
+
       }
       setLoading(false)
     },
@@ -96,10 +114,10 @@ const Home = ({ navigation }) => {
     />
   }
 
-//switch to feed media details
-  const feedMediaDetailClick = (item)=>{
-    navigationToScreen(screenName.FEED_MEDIA_DETAILS,{
-      item:item
+  //switch to feed media details
+  const feedMediaDetailClick = (item) => {
+    navigationToScreen(screenName.FEED_MEDIA_DETAILS, {
+      item: item
     })
   }
 
@@ -109,9 +127,51 @@ const Home = ({ navigation }) => {
     return <Feed
       item={item}
       index={index}
-      feedMediaClick = {()=>feedMediaDetailClick(item)}
+      feedMediaClick={() => feedMediaDetailClick(item)}
     />
   }
+
+  // render renderRetailers
+  const renderRetailers = ({ item, index }) => {
+    return (
+      <View style={{
+        width: scale(71),  marginRight: 15,
+        marginBottom: 15, alignContent: 'center', alignItems: 'center', justifyContent: 'center',backgroundColor:'red'
+      }}>
+        <View style={{
+          width: '100%', height: verticalScale(80),
+          borderColor: colors.brand_outline, borderWidth: 1, borderRadius: 60
+        }}>
+          <AppImage
+            source={{ uri: item.retailerLogo }}
+            style={{ width: undefined, height: undefined, flex: 1, borderRadius: 60 }}
+            resizeMode={imageResize.contain}
+          />
+        </View>
+        <View style={{
+          width: 50, height: 30, borderColor: '#F8A4A7', borderWidth: 1,
+          marginTop: -20, backgroundColor: colors.white
+        }}>
+          <SvgComponent
+            id={'coupon'}
+            width={30}
+            height={30}
+            iconColor={'#ED1C24'}
+          />
+        </View>
+        <CommonText
+          text={item.retailerName}
+          style={{
+            color: colors.black, fontSize: fontSizes.extraExtraSmall,
+            fontFamily: fonts.MontserratRegular, marginTop: 10,
+            textAlign: 'center',height:30
+          }}
+          numberOfLines={2}
+        />
+      </View>
+    )
+  }
+
 
   return (
     <View style={appStyles.container}>
@@ -180,7 +240,24 @@ const Home = ({ navigation }) => {
                 static banner 
               / */}
             <View style={styles.banner_main_container}>
-              <View style={styles.banner_child_white_container}>
+              <CommonText
+                text={strings.brand_stand}
+                style={appStyles.heading_txt}
+              />
+              <CommonText
+                text={strings.delightful_reward_together}
+                style={appStyles.brand_stand_mg}
+              />
+              <FlatList
+                data={retailers}
+                renderItem={renderRetailers}
+                style={{ paddingVertical: 20 }}
+                keyExtractor={(item, index) => index.toString()}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
+                numColumns={4}
+              />
+              {/* <View style={styles.banner_child_white_container}>
                 <View style={{ flex: 1 }}>
                   <AppImage
                     style={{ width: undefined, height: undefined, flex: 1 }}
@@ -201,7 +278,7 @@ const Home = ({ navigation }) => {
                     title={strings.view_all}
                   />
                 </View>
-              </View>
+              </View> */}
             </View>
 
 
@@ -284,8 +361,7 @@ const styles = StyleSheet.create({
     width: '100%',
     //height: verticalScale(440) ,
     height: deviceHeight * 0.6,
-
-    backgroundColor: colors.purpleBackground, marginVertical: 20, padding: 20
+    marginVertical: 20, padding: 20
   },
   banner_child_white_container: {
     flex: 1, backgroundColor: colors.white,

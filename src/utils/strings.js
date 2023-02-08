@@ -83,6 +83,8 @@ const strings = {
   reward_for_you:"Rewards for you",
   explore_more_rewards:"Explore more rewards",
   stay_updated:'Stay Updated',
+  brand_stand:'Brand Stand',
+  brand_stand_mg:'Explore the brands you love',
 }
 
 export default strings

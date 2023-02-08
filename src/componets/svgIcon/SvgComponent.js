@@ -108,7 +108,7 @@ const SvgComponent = ({
         viewBoxMain = "395 125 40 40"
     } else if (id == '3.12') {
         viewBoxMain = "430 125 40 40"
-    } else if (id == '3.13') {
+    } else if (id == 'coupon') {
         viewBoxMain = "463 125 40 40"
     } else if (id == 'store') {
         viewBoxMain = "497 125 40 40"

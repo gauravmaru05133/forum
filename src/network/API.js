@@ -14,6 +14,9 @@ export const API = {
     getHomeScreen: (onResponse, data) => {
         request(onResponse, data, API_METHOD.GET, URLCollection.GET_HOME_SCREEN)
     },
+    getRetailers: (onResponse, data) => {
+        request(onResponse, data, API_METHOD.GET, URLCollection.GET_RETAILS)
+    },
     getNewsFeeds: (onResponse, data) => {
         request(onResponse, data, API_METHOD.GET, URLCollection.GET_NEWS_FEED_LIST)
     },

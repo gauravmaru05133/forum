@@ -43,8 +43,6 @@ const FeedTab = ({ navigation }) => {
   const [feedTags, setFeedTags] = useState([])
 
   useEffect(() => {
-    Constant.navigation = navigation;
-    setLoading(true)
     fetchFeedTabApi()
   }, []);
 
@@ -59,7 +57,7 @@ const FeedTab = ({ navigation }) => {
     success: (res) => {
       console.log("home_Screen_res,", res)
       setHomeScreenInfo(res)
-      setLoading(false)
+      
     },
     error: (err) => {
       console.log("home_Screen_error,", err)

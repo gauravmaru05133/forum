@@ -28,5 +28,6 @@ const colors = {
   purpleBtn: "#56327A",
   thinTxt: "#7B7B7B",
   readMoreLessColor:'#F99E49',
+  brand_outline:'#D9D9D9',
 }
 export default colors;
