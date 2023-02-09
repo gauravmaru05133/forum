@@ -21,5 +21,6 @@ const screenName = {
     FEED_MEDIA_DETAILS:'FeedMediaDetails',
     VIDEO_PLAYER:'VideoPlayer',
     FEED_TAB:'FeedTab',
+    BRAND_DETAILS:'BrandDetails',
 }
 export default screenName;

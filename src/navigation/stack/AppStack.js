@@ -9,6 +9,7 @@ import FeedMediaDetails from "../../screens/FeedTab/FeedMediaDetails";
 import VideoPlayer from "../../screens/VideoPlayer";
 import Feed from "../../screens/FeedTab";
 import FeedTab from "../../screens/FeedTab";
+import BrandDetails from "../../screens/BrandDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,11 +32,13 @@ const AppStack = () => {
         name={screenName.FEED_MEDIA_DETAILS}
         component={FeedMediaDetails}
       />
-
-
       <Stack.Screen
         name={screenName.VIDEO_PLAYER}
         component={VideoPlayer}
+      />
+      <Stack.Screen
+        name={screenName.BRAND_DETAILS}
+        component={BrandDetails}
       />
 
 

@@ -51,10 +51,10 @@ export const HEADER_KEYS = {
 export const URLCollection = {
     GET_CONSTANT:BASE_URL.BASE_URL+'constants/getConstants/',
     LOGIN: BASE_URL.BASE_URL + 'user/login',
-    TEAM_INFO: BASE_URL.BASE_URL_SEC + 'get_team_info?',
     LOGOUT: BASE_URL.BASE_URL + 'user/logout',
     GET_HOME_SCREEN: BASE_URL.BASE_URL+'customers/home/full',
     GET_NEWS_FEED_LIST:BASE_URL.BASE_URL+'customers/newsfeed/',
     GET_RETAILS:BASE_URL.BASE_URL+'customers/retailers',
+    GET_SINGLE_RETAILERS : BASE_URL.BASE_URL+'customers/retailers/',
 
 }

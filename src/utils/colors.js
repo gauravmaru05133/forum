@@ -9,7 +9,7 @@ const colors = {
   light_blue: 'light_blue',
   iris_blue: '#5D3FD3',
   disable_txt_color: "#BABABA",
-  txt_color: "#434343",
+  txt_color: "#262626",
   txtGray: '#909090',
   //appBackground:"#F5F5F5",
   appBackground: "rgba(255,255,255,0.5)",
@@ -29,5 +29,8 @@ const colors = {
   thinTxt: "#7B7B7B",
   readMoreLessColor:'#F99E49',
   brand_outline:'#D9D9D9',
+  coupon_red_color:'#ED1C24',
+  coupon_count_bordercolor:'#F8A4A7',
+  app_green:'#39AC67',
 }
 export default colors;

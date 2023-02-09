@@ -82,9 +82,15 @@ const strings = {
   delightful_reward_together:"Delightful rewards for sticking together",
   reward_for_you:"Rewards for you",
   explore_more_rewards:"Explore more rewards",
+  explore_more_brand:"Explore more brand",
   stay_updated:'Stay Updated',
   brand_stand:'Brand Stand',
   brand_stand_mg:'Explore the brands you love',
+  open:'Open',
+  close:'Close',
+  read_more:'Read More',
+  read_less:'Read Less',
+
 }
 
 export default strings

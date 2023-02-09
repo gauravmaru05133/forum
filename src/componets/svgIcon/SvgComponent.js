@@ -47,7 +47,7 @@ const SvgComponent = ({
         viewBoxMain = "428 55 40 40"
     } else if (id == '1.14') {
         viewBoxMain = "463 55 40 40"
-    } else if (id == '1.15') {
+    } else if (id == 'phone_receiver_outline') {
         viewBoxMain = "495 55 40 40"
     } else if (id == '1.16') {
         viewBoxMain = "532 55 40 40"
@@ -83,7 +83,7 @@ const SvgComponent = ({
     } else if (id == '2.16') {
         viewBoxMain = "530 90 40 40"
     }
-    else if (id == '3.1') {
+    else if (id == 'heart_fill') {
         //viewBoxMain = "55 123 40 40"
         viewBoxMain = "55 123 40 40"
     } else if (id == '3.2') {
@@ -102,14 +102,14 @@ const SvgComponent = ({
         viewBoxMain = "293 125 40 40"
     } else if (id == '3.9') {
         viewBoxMain = "327 125 40 40"
-    } else if (id == '3.10') {
+    } else if (id == 'chevron-down') {
         viewBoxMain = "327 125 40 40"
     } else if (id == '3.11') {
         viewBoxMain = "395 125 40 40"
     } else if (id == '3.12') {
         viewBoxMain = "430 125 40 40"
     } else if (id == 'coupon') {
-        viewBoxMain = "463 125 40 40"
+        viewBoxMain = "460 122 40 40"
     } else if (id == 'store') {
         viewBoxMain = "497 125 40 40"
     } else if (id == '3.15') {
@@ -143,7 +143,7 @@ const SvgComponent = ({
         viewBoxMain = "463 157 40 40"
     } else if (id == '4.14') {
         viewBoxMain = "497 157 40 40"
-    } else if (id == '4.15') {
+    } else if (id == 'map_pin_outline') {
         viewBoxMain = "532 157 40 40"
     }
 
@@ -179,7 +179,7 @@ const SvgComponent = ({
     const iconColorM = iconColor ? iconColor : colors.black
 
     return (
-        <View style={[{ width: width ? width : 40, height: height ? height : 40,}, container]}
+        <View style={[{ width: width ? width : 40, height: height ? height : 40,alignContent:'center',alignItems:'center',justifyContent:'center'}, container]}
             pointerEvents='none'
         >
             <Svg

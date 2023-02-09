@@ -13,7 +13,7 @@ import Header from "../../componets/header/Header";
 import ImageSlider from "../../componets/imageSlider";
 import Constant from "../../constant";
 import strings from "../../utils/strings";
-import { deviceHeight, deviceWidth, fontSizes, imageResize } from "../../utils/variables";
+import { deviceHeight, deviceWidth, fontSizes, imageResize, paddingHorizontal } from "../../utils/variables";
 import { navigationToScreen } from "../../utils/navigations";
 import screenName from "../../utils/screenName";
 import SvgComponent from "../../componets/svgIcon/SvgComponent";
@@ -35,7 +35,6 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { API } from "../../network/API";
 import Loader from "../../componets/Loader";
 
-const paddingHorizontal = 20
 const Home = ({ navigation }) => {
   const [couponsList, setCoupons] = useState([])
   const [homeScreenInfo, setHomeScreenInfo] = useState('')
@@ -61,7 +60,7 @@ const Home = ({ navigation }) => {
       console.log("home_Screen_res,", res)
       setHomeScreenInfo(res)
       if (res?.retailerList && res?.retailerList.length > 0) {
-        let retailers = res?.retailerList.slice(0, 7)
+        let retailers = res?.retailerList.slice(0, 8)
         setRetailers(retailers)
       }
     },
@@ -96,9 +95,6 @@ const Home = ({ navigation }) => {
   const renderProduct = ({ item, index }) => {
     return <FeaturedProducts item={item} index={index} />;
   };
-  const screenSwitchToSurvey = () => {
-    navigationToScreen(screenName.SURVEY);
-  };
 
   const navigateToProfile = () => {
     navigationToScreen(screenName.PROFILE);
@@ -131,44 +127,47 @@ const Home = ({ navigation }) => {
     />
   }
 
+  //switch to brand details screen
+  const switchBranDetails = (item)=>{
+    navigationToScreen(screenName.BRAND_DETAILS,{
+      item
+    })
+  }
+
   // render renderRetailers
   const renderRetailers = ({ item, index }) => {
     return (
-      <View style={{
-        width: scale(71),  marginRight: 15,
-        marginBottom: 15, alignContent: 'center', alignItems: 'center', justifyContent: 'center',backgroundColor:'red'
-      }}>
-        <View style={{
-          width: '100%', height: verticalScale(80),
-          borderColor: colors.brand_outline, borderWidth: 1, borderRadius: 60
-        }}>
+      <TouchableOpacity style={styles.brand_main_container}
+      onPress={()=>switchBranDetails(item)}
+      >
+        <View style={styles.brand_logo_container}>
           <AppImage
             source={{ uri: item.retailerLogo }}
-            style={{ width: undefined, height: undefined, flex: 1, borderRadius: 60 }}
+            style={styles.brand_logo}
             resizeMode={imageResize.contain}
           />
         </View>
-        <View style={{
-          width: 50, height: 30, borderColor: '#F8A4A7', borderWidth: 1,
-          marginTop: -20, backgroundColor: colors.white
-        }}>
+        {item.couponCount<0 && (
+          <View style={styles.brand_coupon_container}>
           <SvgComponent
             id={'coupon'}
-            width={30}
-            height={30}
-            iconColor={'#ED1C24'}
+            width={25}
+            height={25}
+            iconColor={colors.coupon_red_color}
+          />
+          <CommonText
+            text={item.couponCount.toString()}
+            style={styles.coupon_count_txt}
           />
         </View>
+        )}
+        
         <CommonText
           text={item.retailerName}
-          style={{
-            color: colors.black, fontSize: fontSizes.extraExtraSmall,
-            fontFamily: fonts.MontserratRegular, marginTop: 10,
-            textAlign: 'center',height:30
-          }}
+          style={styles.brand_name_txt}
           numberOfLines={2}
         />
-      </View>
+      </TouchableOpacity>
     )
   }
 
@@ -237,9 +236,9 @@ const Home = ({ navigation }) => {
             </View>
 
             {/* /
-                static banner 
+                brand section 
               / */}
-            <View style={styles.banner_main_container}>
+            <View style={[styles.banner_main_container]}>
               <CommonText
                 text={strings.brand_stand}
                 style={appStyles.heading_txt}
@@ -256,29 +255,15 @@ const Home = ({ navigation }) => {
                 showsVerticalScrollIndicator={false}
                 showsHorizontalScrollIndicator={false}
                 numColumns={4}
+                ListFooterComponent={() => {
+                  return (
+                    <ExploreMore
+                      title={strings.explore_more_brand}
+                    />
+                  )
+                }}
               />
-              {/* <View style={styles.banner_child_white_container}>
-                <View style={{ flex: 1 }}>
-                  <AppImage
-                    style={{ width: undefined, height: undefined, flex: 1 }}
-                    source={images.brandBanner}
-                    resizeMode={imageResize.cover}
-                  />
-                </View>
-                <View style={styles.banner_info_title_container}>
-                  <CommonText
-                    text={strings.feature_brands_at_forum}
-                    style={appStyles.heading_txt}
-                  />
-                  <CommonText
-                    text={strings.delightful_reward_together}
-                    style={appStyles.thin_sec_title}
-                  />
-                  <AppButton
-                    title={strings.view_all}
-                  />
-                </View>
-              </View> */}
+
             </View>
 
 
@@ -343,8 +328,6 @@ const Home = ({ navigation }) => {
           </View>
         </ScrollView>
       }
-
-
     </View>
   );
 };
@@ -360,8 +343,8 @@ const styles = StyleSheet.create({
   banner_main_container: {
     width: '100%',
     //height: verticalScale(440) ,
-    height: deviceHeight * 0.6,
-    marginVertical: 20, padding: 20
+    //height: deviceHeight * 0.6,
+    marginVertical: 10, padding: 20
   },
   banner_child_white_container: {
     flex: 1, backgroundColor: colors.white,
@@ -388,6 +371,28 @@ const styles = StyleSheet.create({
   },
   stay_updated_list: {
     flex: 1, marginTop: 20
+  },
+  brand_main_container:{
+    width: scale(71), marginRight: 15,
+        marginBottom: 15, alignContent: 'center', alignItems: 'center', justifyContent: 'center'
+  },
+  brand_logo_container:{
+    width: '100%', height: verticalScale(80),
+    borderColor: colors.brand_outline, borderWidth: 1, borderRadius: 60
+  },brand_logo:{
+    width: undefined, height: undefined, flex: 1, borderRadius: 60
+  },brand_coupon_container:{
+    width: 50, height: 30, borderColor: colors.coupon_count_bordercolor, borderWidth: 1,
+          marginTop: -20, backgroundColor: colors.white, flexDirection: 'row',
+          alignContent: 'center', alignItems: 'center', justifyContent: 'center'
+  },
+  coupon_count_txt:{
+    fontFamily: fonts.MontserratRegular, color: colors.black, fontSize: fontSizes.extraSmall
+  },
+  brand_name_txt:{
+    color: colors.black, fontSize: fontSizes.extraExtraSmall,
+            fontFamily: fonts.MontserratRegular, marginTop: 10,
+            textAlign: 'center', height: 30
   }
 
 });

@@ -6,6 +6,7 @@ import { deviceWidth, fontSizes } from "../../utils/variables";
 import SVGComponent from "../svgIcon/SvgComponent";
 import colors from "../../utils/colors";
 import CommonText from "../commonText";
+import { goBackScreen } from "../../utils/navigations";
 
 const Header = ({
   container,
@@ -17,7 +18,8 @@ const Header = ({
   isInnerScreen,
   onPress,
   isLocationShow,
-  profileIconOutline
+  profileIconOutline,
+  isBackArrow
 }) => {
   return (
     <View style={[styles({ isInnerScreen }).mainContainer, container]}>
@@ -29,8 +31,22 @@ const Header = ({
         />
       )}
 
+      {isBackArrow && (
+        <View style={{ flexDirection: 'row' }}>
+          <SVGComponent id={"chevron_left"} iconColor={colors.black} />
+        </View>
+      )}
+
       {isInnerScreen && (
-        <SVGComponent id={"chevron_left"} iconColor={colors.black} />
+        <View style={{ flex: 1, flexDirection: 'row', }}>
+          <TouchableOpacity onPress={() => goBackScreen()}>
+            <SVGComponent id={"chevron_left"} iconColor={colors.black} />
+          </TouchableOpacity>
+
+          <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
+            <CommonText text={heading} style={styles().headingTxt} />
+          </View>
+        </View>
       )}
 
       {isLocationShow && (

@@ -6,6 +6,8 @@ export const deviceHeight = Dimensions.get("window").height;
 export const NUMBER_REGX = /^[0-9\b]+$/;
 export const DEFAULT_COUNTRY_CODE='+91'
 
+// screen horizontal padding
+export const paddingHorizontal  = 20
 
 // font sizes
 export const fontSizes = {

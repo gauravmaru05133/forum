@@ -20,6 +20,9 @@ export const API = {
     getNewsFeeds: (onResponse, data) => {
         request(onResponse, data, API_METHOD.GET, URLCollection.GET_NEWS_FEED_LIST)
     },
+    getRetailersDetails: (onResponse, data) => {
+        request(onResponse, data, API_METHOD.GET, URLCollection.GET_SINGLE_RETAILERS+data)
+    },
 }
 
 //is heck intenet connection
