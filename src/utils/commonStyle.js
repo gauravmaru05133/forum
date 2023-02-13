@@ -24,6 +24,10 @@ const appStyles = StyleSheet.create({
    modal_title_txt:{
     fontFamily: fonts.TFArrowBold, fontSize: fontSizes.extraLarge, 
     color: colors.txt_color, paddingVertical: 15,
-   }
+   },
+   view_all_txt: {
+    fontFamily: fonts.MontserratRegular, fontSize: fontSizes.extraSmall,
+    color: colors.txt_color, marginBottom: 15,textTransform:'uppercase',
+},
 })
 export default appStyles;

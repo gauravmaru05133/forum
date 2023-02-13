@@ -18,9 +18,9 @@ import ReadMore from "@fawazahmed/react-native-read-more";
 import Media from "./Media";
 
 
-const Feed = ({ item, index,feedMediaClick }) => {
+const Feed = ({ item, index,feedMediaClick ,mainContainer}) => {
     return (
-        <View style={styles.cell_container}>
+        <View style={[styles.cell_container,mainContainer]}>
             <View style={styles.brand_cell_container}>
                 <AppImage
                     style={{ width: 40, height: 40 }}
@@ -48,8 +48,6 @@ const Feed = ({ item, index,feedMediaClick }) => {
                             style={{ color: '#262626', fontFamily: fonts.MontserratRegular, fontSize: fontSizes.extraExtraSmall }}
                         />
                     </View>
-
-
                 </View>
             </View>
             {item.media.length > 0 && (

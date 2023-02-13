@@ -18,7 +18,7 @@ export const API = {
         request(onResponse, data, API_METHOD.GET, URLCollection.GET_RETAILS)
     },
     getNewsFeeds: (onResponse, data) => {
-        request(onResponse, data, API_METHOD.GET, URLCollection.GET_NEWS_FEED_LIST)
+        request(onResponse, data, API_METHOD.GET, URLCollection.GET_NEWS_FEED_LIST+data)
     },
     getRetailersDetails: (onResponse, data) => {
         request(onResponse, data, API_METHOD.GET, URLCollection.GET_SINGLE_RETAILERS+data)

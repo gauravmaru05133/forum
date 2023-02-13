@@ -59,6 +59,11 @@ const Home = ({ navigation }) => {
     success: (res) => {
       console.log("home_Screen_res,", res)
       setHomeScreenInfo(res)
+      console.log("home_Screen_banner,", res?.banners)
+      // if(res?.banners){
+      //   Constant.homeBanner = res?.banners
+      // }
+
       if (res?.retailerList && res?.retailerList.length > 0) {
         let retailers = res?.retailerList.slice(0, 8)
         setRetailers(retailers)
@@ -192,6 +197,7 @@ const Home = ({ navigation }) => {
             <ImageSlider
               data={homeScreenInfo?.banners}
               isDetailsEnable={false}
+              isIndicatorShow={true}
             />
             <View style={styles.coupon_for_u_container}>
               <ElevatedView style={styles.search_elevation}>

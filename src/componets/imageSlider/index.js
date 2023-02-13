@@ -19,7 +19,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import DotIndicator from "../../componets/DotIndicator";
 
 
-const ImageSlider = ({ width, height, itemWidth, itemHeight, isDetailsEnable, data }) => {
+const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isDetailsEnable, data }) => {
   const flatlistIndicatorRef = useRef(null)
   const carouselRef = useRef(null);
   const [iWidth, setIWidth] = useState(
@@ -51,7 +51,7 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isDetailsEnable, da
       <View style={{ width: "100%", height: "100%", paddingHorizontal: 5 }}>
         <AppImage
           style={{ width: "100%", height: "100%" }}
-          source={{ 'uri': item.image }}
+          source={{ 'uri': item.image ? item.image : item.imageUrl }}
         />
         {isDetailsEnable && (
           <View style={styles().gradientContainer}>
@@ -108,7 +108,8 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isDetailsEnable, da
           }}
         />
       </View>
-      <View style={styles().indicatorContainer}>
+      {isIndicatorShow && (
+        <View style={styles().indicatorContainer}>
         <DotIndicator
           passiveDotWidth={20}
           activeDotWidth={20}
@@ -145,6 +146,8 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isDetailsEnable, da
           );
         })} */}
       </View>
+      )}
+      
     </View>
   );
 };

@@ -90,7 +90,14 @@ const strings = {
   close:'Close',
   read_more:'Read More',
   read_less:'Read Less',
-
+  curated_offers:'Curated Offers',
+  catalogue:'Catalogue',
+  feed:'Feed',
+  view_all:"View All",
+  ratings:'Ratings',
+  ratings_msg:'Let us know how you liked your experience at Zara by tapping on the stars',
+  average_rating:'Average Rating',
+  add_rating:'Add Rating',
 }
 
 export default strings

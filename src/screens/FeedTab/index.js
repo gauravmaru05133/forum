@@ -43,6 +43,7 @@ const FeedTab = ({ navigation }) => {
   const [feedTags, setFeedTags] = useState([])
 
   useEffect(() => {
+    console.log("pppppppppp ",Constant.homeBanner)
     fetchFeedTabApi()
   }, []);
 
@@ -161,7 +162,7 @@ const FeedTab = ({ navigation }) => {
                 Top banner 
               / */}
             <ImageSlider
-              data={homeScreenInfo?.banners}
+              data={Constant.homeBanner}
               isDetailsEnable={false}
             />
 
