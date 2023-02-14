@@ -17,9 +17,11 @@ import fonts from "../../assets/fonts";
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import DotIndicator from "../../componets/DotIndicator";
+import CommonText from "../commonText";
 
 
-const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isDetailsEnable, data }) => {
+const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,
+  isDetailsEnable, data,isCount }) => {
   const flatlistIndicatorRef = useRef(null)
   const carouselRef = useRef(null);
   const [iWidth, setIWidth] = useState(
@@ -48,7 +50,7 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isD
 
   const renderItem = ({ item, index }) => {
     return (
-      <View style={{ width: "100%", height: "100%", paddingHorizontal: 5 }}>
+      <View style={styles().banner_img_container}>
         <AppImage
           style={{ width: "100%", height: "100%" }}
           source={{ 'uri': item.image ? item.image : item.imageUrl }}
@@ -90,6 +92,7 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isD
           }).container
         }
       >
+
         <Carousel
           //loop
           ref={carouselRef}
@@ -103,23 +106,36 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isD
             setActiveSlide(index)
             //flatlistIndicatorRef.current.scrollToIndex({ index: index })
           }}
+
           ItemSeparatorComponent={() => {
             return <View style={styles().sliderDivider} />;
           }}
         />
+        {isCount && (
+          <View style={styles().count_container}>
+          <CommonText
+            text={`${activeSlide + 1} / ${data.length}`}
+            style={styles().count_txt}
+          />
+        </View>
+        )}
+        
       </View>
+
+
+
       {isIndicatorShow && (
         <View style={styles().indicatorContainer}>
-        <DotIndicator
-          passiveDotWidth={20}
-          activeDotWidth={20}
-          passiveDotHeight={2}
-          activeDotHeight={3}
-          length={data?.length}
-          active={activeSlide}
-          
-        />
-        {/* <FlatList
+          <DotIndicator
+            passiveDotWidth={20}
+            activeDotWidth={20}
+            passiveDotHeight={2}
+            activeDotHeight={3}
+            length={data?.length}
+            active={activeSlide}
+
+          />
+          {/* <FlatList
           ref={flatlistIndicatorRef}
           data={data}
           renderItem={renderItemIndicator}
@@ -137,7 +153,7 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isD
           horizontal
           showsHorizontalScrollIndicator={false}
         /> */}
-        {/* {data.map((item, index) => {
+          {/* {data.map((item, index) => {
           return (
             <View
               key={index}
@@ -145,9 +161,9 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,isD
             />
           );
         })} */}
-      </View>
+        </View>
       )}
-      
+
     </View>
   );
 };
@@ -198,5 +214,17 @@ const styles = (props = {}) =>
       marginTop: 12,
       alignContent: 'center', alignItems: 'center', justifyContent: 'center'
     },
+    count_container:{
+      backgroundColor: colors.black,
+          position: 'absolute', alignSelf: 'center',
+          paddingHorizontal: 10, paddingVertical: 8, borderRadius: 10,
+          bottom: Platform.OS == 'ios' ? 60 : 30, right: 40
+    },
+    count_txt:{
+      color: colors.white, fontSize: fontSizes.extraExtraSmall, fontFamily: fonts.MontserratMedium 
+    },
+    banner_img_container:{
+      width: "100%", height: "100%", paddingHorizontal: 5 
+    }
   });
 export default ImageSlider;

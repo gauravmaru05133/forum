@@ -7,6 +7,7 @@ import {
   FlatList,
   ImageBackground,
   ScrollView,
+  Platform,
 } from "react-native";
 import FeaturedProducts from "../../componets/featureProducts";
 import Header from "../../componets/header/Header";
@@ -30,10 +31,12 @@ import appStyles from "../../utils/commonStyle";
 import AppButton from "../../componets/AppButton";
 import stayFeed from "../../utils/json/stayFeed";
 import Feed from "../../componets/Feed";
-import { scale, verticalScale, moderateScale } from "react-native-size-matters";
+import { scale,} from "react-native-size-matters";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { API } from "../../network/API";
 import Loader from "../../componets/Loader";
+import { horizontalScale, moderateScale, verticalScale } from '../../utils/Matrix';
+
 
 const Home = ({ navigation }) => {
   const [couponsList, setCoupons] = useState([])
@@ -59,10 +62,10 @@ const Home = ({ navigation }) => {
     success: (res) => {
       console.log("home_Screen_res,", res)
       setHomeScreenInfo(res)
-      console.log("home_Screen_banner,", res?.banners)
-      // if(res?.banners){
-      //   Constant.homeBanner = res?.banners
-      // }
+      console.log("home_Screen_banner,", res)
+      if(res?.banners){
+        Constant.homeBanner = res?.banners
+      }
 
       if (res?.retailerList && res?.retailerList.length > 0) {
         let retailers = res?.retailerList.slice(0, 8)
@@ -84,6 +87,9 @@ const Home = ({ navigation }) => {
         let newsFeeds = res?.newsFeeds.slice(0, 4)
         console.log("feed_lengths >>", newsFeeds.length)
         setFeedList(newsFeeds)
+        if(res?.banners){
+          Constant.homeBanner = res?.banners
+        }
       } else {
 
       }
@@ -133,8 +139,8 @@ const Home = ({ navigation }) => {
   }
 
   //switch to brand details screen
-  const switchBranDetails = (item)=>{
-    navigationToScreen(screenName.BRAND_DETAILS,{
+  const switchBranDetails = (item) => {
+    navigationToScreen(screenName.BRAND_DETAILS, {
       item
     })
   }
@@ -143,7 +149,7 @@ const Home = ({ navigation }) => {
   const renderRetailers = ({ item, index }) => {
     return (
       <TouchableOpacity style={styles.brand_main_container}
-      onPress={()=>switchBranDetails(item)}
+        onPress={() => switchBranDetails(item)}
       >
         <View style={styles.brand_logo_container}>
           <AppImage
@@ -152,21 +158,21 @@ const Home = ({ navigation }) => {
             resizeMode={imageResize.contain}
           />
         </View>
-        {item.couponCount<0 && (
+        {item.couponCount < 0 && (
           <View style={styles.brand_coupon_container}>
-          <SvgComponent
-            id={'coupon'}
-            width={25}
-            height={25}
-            iconColor={colors.coupon_red_color}
-          />
-          <CommonText
-            text={item.couponCount.toString()}
-            style={styles.coupon_count_txt}
-          />
-        </View>
+            <SvgComponent
+              id={'coupon'}
+              width={25}
+              height={25}
+              iconColor={colors.coupon_red_color}
+            />
+            <CommonText
+              text={item.couponCount.toString()}
+              style={styles.coupon_count_txt}
+            />
+          </View>
         )}
-        
+
         <CommonText
           text={item.retailerName}
           style={styles.brand_name_txt}
@@ -378,27 +384,32 @@ const styles = StyleSheet.create({
   stay_updated_list: {
     flex: 1, marginTop: 20
   },
-  brand_main_container:{
-    width: scale(71), marginRight: 15,
-        marginBottom: 15, alignContent: 'center', alignItems: 'center', justifyContent: 'center'
+  brand_main_container: {
+    width: scale(Platform.OS=='ios'? 68:66.5),
+    height: verticalScale(130),
+    marginRight: 15,
+    marginBottom: 15, alignContent: 'center', alignItems: 'center', 
+    justifyContent: 'center'
   },
-  brand_logo_container:{
-    width: '100%', height: verticalScale(80),
+  brand_logo_container: {
+    width: '100%', 
+    //height: verticalScale(Platform.OS=='ios' ?62:deviceHeight*0.115),
+    height: verticalScale(80),
     borderColor: colors.brand_outline, borderWidth: 1, borderRadius: 60
-  },brand_logo:{
+  }, brand_logo: {
     width: undefined, height: undefined, flex: 1, borderRadius: 60
-  },brand_coupon_container:{
+  }, brand_coupon_container: {
     width: 50, height: 30, borderColor: colors.coupon_count_bordercolor, borderWidth: 1,
-          marginTop: -20, backgroundColor: colors.white, flexDirection: 'row',
-          alignContent: 'center', alignItems: 'center', justifyContent: 'center'
+    marginTop: -20, backgroundColor: colors.white, flexDirection: 'row',
+    alignContent: 'center', alignItems: 'center', justifyContent: 'center'
   },
-  coupon_count_txt:{
+  coupon_count_txt: {
     fontFamily: fonts.MontserratRegular, color: colors.black, fontSize: fontSizes.extraSmall
   },
-  brand_name_txt:{
+  brand_name_txt: {
     color: colors.black, fontSize: fontSizes.extraExtraSmall,
-            fontFamily: fonts.MontserratRegular, marginTop: 10,
-            textAlign: 'center', height: 30
+    fontFamily: fonts.MontserratRegular, marginTop: 10,
+    textAlign: 'center', height: 30
   }
 
 });

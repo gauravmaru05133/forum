@@ -13,7 +13,6 @@
 #import <React/RCTSurfacePresenter.h>
 #import <React/RCTSurfacePresenterBridgeAdapter.h>
 #import <ReactCommon/RCTTurboModuleManager.h>
-
 #import <react/config/ReactNativeConfig.h>
 
 @interface AppDelegate () <RCTCxxBridgeDelegate, RCTTurboModuleManagerDelegate> {
@@ -26,6 +25,10 @@
 #endif
 
 @implementation AppDelegate
+
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//    return [Orientation getOrientation];
+//}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -104,5 +107,6 @@
 }
 
 #endif
+
 
 @end

@@ -32,5 +32,6 @@ const colors = {
   coupon_red_color:'#ED1C24',
   coupon_count_bordercolor:'#F8A4A7',
   app_green:'#39AC67',
+  tab_unselect:'#C4C4C4',
 }
 export default colors;

@@ -83,7 +83,7 @@ const SvgComponent = ({
     } else if (id == '2.16') {
         viewBoxMain = "530 90 40 40"
     }
-    else if (id == 'heart_fill') {
+    else if (id == 'star_fill') {
         //viewBoxMain = "55 123 40 40"
         viewBoxMain = "55 123 40 40"
     } else if (id == '3.2') {

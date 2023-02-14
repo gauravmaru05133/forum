@@ -84,10 +84,10 @@ const request = async (onResponse, data, type, url, requestFormate) => {
         headers: appHeaders,
         timeout: BASE_URL.API_TIME_OUT,
         timeoutErrorMessage: strings.api_timeout,
-        data:data
+        //data:data
     };
     if (API_METHOD.POST == type) {
-        //  apiconfig.data = data
+          apiconfig.data = data
     } else {
 
     }

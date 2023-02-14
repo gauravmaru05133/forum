@@ -164,6 +164,7 @@ const FeedTab = ({ navigation }) => {
             <ImageSlider
               data={Constant.homeBanner}
               isDetailsEnable={false}
+              isIndicatorShow={true}
             />
 
             {
