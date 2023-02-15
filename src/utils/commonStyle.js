@@ -12,7 +12,7 @@ const appStyles = StyleSheet.create({
         width: deviceWidth, height: deviceHeight * 0.5, 
     },
     modal_child_container:{
-        width: '100%', height: '100%', 
+        width: '100%', height: '100%', paddingHorizontal:10
    },
    heading_txt:{
     fontFamily: fonts.MontserratBold, fontSize: fontSizes.mediumLarge, color: colors.black 
@@ -22,7 +22,7 @@ const appStyles = StyleSheet.create({
     color: colors.txtGray, marginTop: 4
    },
    modal_title_txt:{
-    fontFamily: fonts.TFArrowBold, fontSize: fontSizes.extraLarge, 
+    fontFamily: fonts.MontserratSemiBold, fontSize: fontSizes.large, 
     color: colors.txt_color, paddingVertical: 15,
    },
    view_all_txt: {

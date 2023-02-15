@@ -98,6 +98,7 @@ const strings = {
   ratings_msg:'Let us know how you liked your experience at Zara by tapping on the stars',
   average_rating:'Average Rating',
   add_rating:'Add Rating',
+  opeaning_time:'Opening Hours',
 }
 
 export default strings

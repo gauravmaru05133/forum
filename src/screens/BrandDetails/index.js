@@ -2,7 +2,7 @@ import { Component, useEffect, useRef, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, FlatList, ImageBackground, Animated, } from "react-native";
 import appStyles from "../../utils/commonStyle";
 import Header from "../../componets/header/Header";
-import { deviceHeight, deviceWidth, fontSizes, imageResize, paddingHorizontal } from "../../utils/variables";
+import { dateOrTimeFormate, deviceHeight, deviceWidth, fontSizes, imageResize, paddingHorizontal } from "../../utils/variables";
 import { API } from "../../network/API";
 import colors from "../../utils/colors";
 import { verticalScale } from "react-native-size-matters";
@@ -25,6 +25,8 @@ import { Rating, AirbnbRating } from 'react-native-ratings';
 import AppButton from "../../componets/AppButton";
 import screenName from "../../utils/screenName";
 import { navigationToScreen } from "../../utils/navigations";
+import AppModal from "../../componets/Modal";
+import { Divider } from "react-native-paper";
 
 const mainTabList = [
     { id: 0, title: 'About' },
@@ -43,9 +45,8 @@ const BrandDetails = ({ route }) => {
     const [feedList, setFeedList] = useState(true)
     const [rating, setRating] = useState(2)
     const [tab, setTab] = useState(mainTabList)
-    const [scrollPosition, setScrollPosition] = useState(0)
-    const [dataSourceCords, setDataSourceCords] = useState([]);
     const [tabIndex, setTabIndex] = useState(0)
+    const [workingTimeModal, setWorkingTimeModal] = useState(false)
 
     useEffect(() => {
         console.log("brand_obj>>", route?.params?.item)
@@ -263,6 +264,25 @@ const BrandDetails = ({ route }) => {
         )
     }
 
+
+    const renderWeekOpenCloseUI = ({ item, index }) => {
+        return (
+            <View style={{
+                width: '100%', height: 50, alignContent: 'center',
+                justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center'
+            }}>
+                <CommonText
+                    text={item.day}
+                    style={{ color:  colors.txt_color, fontSize: fontSizes.extraExtraSmall, fontFamily: fonts.MontserratRegular }}
+                />
+                <CommonText
+                    text={item.isActive == 0 ? strings.close : moment(item.openTime, 'HH:mm').format(dateOrTimeFormate.hh_mm_A) + " - " + moment(item.closeTime, 'HH:mm').format(dateOrTimeFormate.hh_mm_A)}
+                    style={{ color: item.isActive == 0 ? colors.red : colors.txt_color, fontSize: fontSizes.extraExtraSmall, fontFamily: fonts.MontserratRegular,textTransform:'uppercase' }}
+                />
+            </View>
+        )
+    }
+
     return (
         <View style={appStyles.container}>
             <View style={{ flex: 1 }}>
@@ -286,7 +306,7 @@ const BrandDetails = ({ route }) => {
                     }}
                     stickyHeaderHeight={0}
                     scrollEvent={(e) => {
-                        setScrollPosition(e.nativeEvent.contentOffset.y)
+                        // setScrollPosition(e.nativeEvent.contentOffset.y)
                     }}
 
                     renderForeground={() => (
@@ -327,7 +347,9 @@ const BrandDetails = ({ route }) => {
                                                     text={retailer?.about?.retailerName}
                                                     style={appStyles.heading_txt}
                                                 />
-                                                <View style={styles.open_close_container}>
+                                                <TouchableOpacity style={styles.open_close_container}
+                                                    onPress={() => setWorkingTimeModal(true)}
+                                                >
                                                     <CommonText
                                                         text={strings.open}
                                                         style={styles.open_close_heading}
@@ -341,7 +363,7 @@ const BrandDetails = ({ route }) => {
                                                         width={25}
                                                         height={25}
                                                     />
-                                                </View>
+                                                </TouchableOpacity>
                                             </View>
                                             <View style={styles.star_fill_container}>
                                                 <View style={styles.start_fill_child_container}>
@@ -559,6 +581,35 @@ const BrandDetails = ({ route }) => {
 
                 </ParallaxScrollView >
             </View >
+            <AppModal
+                isVisible={workingTimeModal}
+                container={appStyles.modal_container}
+                onBackButtonPress={() => {
+                    setWorkingTimeModal(false)
+                }}
+            >
+                <View style={appStyles.modal_child_container}>
+                    <View style={styles.modal_heading_container}>
+                        <CommonText
+                            text={strings.opeaning_time}
+                            style={appStyles.modal_title_txt}
+                        />
+
+                    </View>
+                    <Divider />
+                    <FlatList
+                        data={retailer?.retailerWeekOpenandCloseTimes}
+                        renderItem={renderWeekOpenCloseUI}
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        style={{ flex: 1 }}
+                        keyExtractor={(item, index) => index.toString()}
+                        ItemSeparatorComponent={() => {
+                            return <Divider />
+                        }}
+                    />
+                </View>
+            </AppModal>
         </View >
     )
 }
@@ -660,11 +711,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     catalogue_cell_container: {
-        width: '100%', position: 'absolute', bottom: 0, padding: 10 
+        width: '100%', position: 'absolute', bottom: 0, padding: 10
     },
-    catalogue_title:{
+    catalogue_title: {
         color: colors.white, fontFamily: fonts.MontserratSemiBold, fontSize: fontSizes.extraSmall, marginTop: 2, textTransform: 'capitalize'
-    }
+    },
+    modal_heading_container: {
+        width: '100%',
+    },
 
 })
 export default BrandDetails;

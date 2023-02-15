@@ -86,6 +86,7 @@ export const dateOrTimeFormate = {
     yyyy_mm_dd: 'YYYY-MM-DD',
     yyyy_mm_dd_hh_mm_a: 'YYYY-MM-DD hh:mm a',
     hh_mm_a: 'hh:mm a',
+    hh_mm_A: 'hh:mm A',
     hh_mm: "HH:mm",
     hh_mm_ss:'hh:mm:ss',
     DO_MM_YYYY:'Do MMM, YYYY'

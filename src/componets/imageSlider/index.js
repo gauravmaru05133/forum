@@ -106,7 +106,6 @@ const ImageSlider = ({ width, height, itemWidth, itemHeight, isIndicatorShow,
             setActiveSlide(index)
             //flatlistIndicatorRef.current.scrollToIndex({ index: index })
           }}
-
           ItemSeparatorComponent={() => {
             return <View style={styles().sliderDivider} />;
           }}
